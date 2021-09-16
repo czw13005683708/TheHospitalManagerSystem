@@ -1,0 +1,2577 @@
+.detailnav {
+    padding: 0;
+    overflow: hidden
+}
+
+.detailnav .follow {
+    float: right
+}
+
+.detailnav .follow em {
+    float: right;
+    margin-left: 10px;
+    width: 76px;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 28px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_infofollow.png) 19px center no-repeat;
+    border: #ff9023 1px solid;
+    border-radius: 26px;
+    overflow: hidden
+}
+
+.detailnav .follow em a {
+    display: block;
+    color: #ff9023
+}
+
+.detailnav .follow em a:hover {
+    text-decoration: none
+}
+
+.detailnav .follow em.followed {
+    display: none;
+    text-indent: 0;
+    background: #ff9023;
+    text-align: center
+}
+
+.detailnav .follow em.followed a {
+    color: #fff
+}
+
+.detailnav .follow .feedback {
+    padding-left: 16px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_infopencil.png) left center no-repeat
+}
+
+.detailnav .follow .feedback a {
+    color: #999
+}
+
+.detailnav .follow .feedback a:hover {
+    color: #ff9023
+}
+
+.detailnav ul {
+    display: flex;
+    font-size: 16px;
+    line-height: 42px;
+    text-align: center;
+    background: #f8f8f8;
+    border-top: #f0f0f0 1px solid
+}
+
+.detailnav li {
+    width: 124px;
+    border-right: #f0f0f0 1px solid
+}
+
+.detailnav li a {
+    display: block
+}
+
+.detailnav li.current a,
+.detailnav li a:hover {
+    color: #fff;
+    background: #38abbb;
+    text-decoration: none
+}
+
+.detailnav li.hot {
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hot.png) right 4px top 5px no-repeat
+}
+
+.detailnav .hospitalinfo {
+    padding: 20px;
+    overflow: hidden
+}
+
+.detailnav .hospitalinfo img {
+    height: 66px;
+    float: left;
+    margin-right: 10px
+}
+
+.detailnav .hospitalinfo h1 {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #333
+}
+
+.detailnav .hospitalinfo h1 i {
+    display: inline-block;
+    font-size: 14px;
+    color: #fff;
+    background: #38abbb;
+    padding: 0 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+    vertical-align: top;
+    overflow: hidden
+}
+
+.detailnav .hospitalinfo h1 i:first-child {
+    margin-left: 20px
+}
+
+.detailnav .hospitalinfo h1 i.tag_orange {
+    color: #ff9023;
+    background: #ffe9d3
+}
+
+.detailnav .hospitalinfo h1 i.tag_blue {
+    color: #1e9cb9;
+    background: #d2ecf1
+}
+
+.detailnav .hospitalinfo h1 i.tag_green {
+    color: #0fb249;
+    background: #d2f6db
+}
+
+.detailnav .hospitalinfo p {
+    font-size: 16px;
+    margin-top: 10px
+}
+
+.detailnav .doctorinfo {
+    padding: 20px;
+    overflow: hidden
+}
+
+.detailnav .doctorinfo .doctoravatar {
+    width: 140px;
+    float: left
+}
+
+.detailnav .doctorinfo .doctoravatar img {
+    width: 140px;
+    height: 175px;
+    border-radius: 5px
+}
+
+.detailnav .doctorinfo .doctordetail {
+    width: 955px;
+    float: right;
+    line-height: 24px
+}
+
+.detailnav .doctorinfo .doctordetail h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    margin: 10px 0 5px
+}
+
+.detailnav .doctorinfo .doctordetail h1 i {
+    font-size: 16px;
+    color: #999;
+    margin-left: 20px
+}
+
+.detailnav .doctorinfo .doctordetail p {
+    margin-top: 10px;
+    overflow: hidden
+}
+
+.detailnav .doctorinfo .doctordetail p em {
+    color: #666;
+    padding-left: 25px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitalintro.png) left center no-repeat
+}
+
+.detailnav .doctorinfo .doctordetail p span {
+    color: #333;
+    float: right;
+    width: 840px
+}
+
+.detailnav .doctorinfo .doctordetail p span i {
+    color: #999;
+    margin-left: 20px
+}
+
+.detailnav .doctorinfo .doctordetail p span i a {
+    color: #999
+}
+
+.detailnav .doctorinfo .doctordetail p span a.loadmore {
+    color: #1e9eb9;
+    margin-left: 20px
+}
+
+.detailnav .doctorinfo .doctordetail p span a:hover {
+    color: #ff9023
+}
+
+.detailnav .doctorinfo .doctordetail p.address em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitallocation.png)
+}
+
+.detailnav .doctorinfo .doctordetail p.goodat em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_infostethophone.png)
+}
+
+.detailnav .doctorinfo .doctordetail p.experience em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_infocertificate.png)
+}
+
+.detailnav .doctorinfo .doctordetail p span .fold,
+.detailnav .doctorinfo .doctordetail p span .extend {
+    display: none
+}
+
+.detailnav .doctorinfo .doctordetail p.address .folded {
+    max-height: 48px;
+    overflow: hidden
+}
+
+.detailnav .doctorinfo .doctordetail p.goodat .folded {
+    max-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.detailnav .doctorinfo .doctordetail p.goodat .extend {
+    float: right
+}
+
+.deptinfo {
+    padding: 24px 20px 30px
+}
+
+.deptinfo strong,
+.deptinfo h1 {
+    display: block;
+    line-height: 26px;
+    color: #333;
+    font-weight: 400;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.deptinfo strong span,
+.deptinfo h1 span {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+    background: #ffac5a;
+    border-radius: 5px
+}
+
+.deptinfo p {
+    font-size: 16px;
+    line-height: 16px;
+    color: #666;
+    margin-top: 18px
+}
+
+.deptinfo p a {
+    color: #1e9eb9;
+    margin-right: 10px
+}
+
+.deptinfo p a:hover {
+    color: #ff9023
+}
+
+.deptinfo p b {
+    color: #1e9eb9;
+    font-weight: 400
+}
+
+.deptinfo .follow {
+    float: right;
+    margin-top: 12px
+}
+
+.deptinfo .follow .feedback {
+    padding-left: 16px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_infopencil.png) left center no-repeat
+}
+
+.deptinfo .follow .feedback a {
+    color: #999
+}
+
+.deptinfo .follow .feedback a:hover {
+    color: #ff9023
+}
+
+.tablelist dl {
+    line-height: 40px;
+    overflow: hidden
+}
+
+.tablelist.withborder dl {
+    padding: 10px 0;
+    border-bottom: #f0f0f0 1px dashed
+}
+
+.tablelist.withborder dl:last-child {
+    border-bottom: 0
+}
+
+.tablelist dt {
+    float: left;
+    width: 115px;
+    color: #333;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.tablelist dd {
+    float: right;
+    width: 702px;
+    overflow: hidden
+}
+
+.tablelist dd span {
+    display: block;
+    height: 40px
+}
+
+.tablelist dd span a {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.tablelist dd span b {
+    font-weight: 400;
+    color: #999
+}
+
+.tablelist dd span a:hover b {
+    color: #ff9023
+}
+
+.tablelist dd span.guo a {
+    padding-right: 35px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_guo.png) right 10px center no-repeat
+}
+
+.tablelist dd span.yue a {
+    padding-right: 35px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_yue.png) right 10px center no-repeat
+}
+
+.tablelist.indexdoclist {
+    padding: 8px 0 15px
+}
+
+.doctorlist {
+    overflow: hidden;
+    padding-top: 20px
+}
+
+.doctorlist li {
+    float: left;
+    width: 185px;
+    margin: 0 33px 40px 0;
+    overflow: hidden
+}
+
+.doctorlist li:nth-child(4n) {
+    margin-right: 0
+}
+
+.doctorlist li img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    border-radius: 3px;
+    margin-right: 20px
+}
+
+.doctorlist li strong {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 4px 0 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctorlist li strong.yue {
+    padding-right: 20px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_yue.png) right center no-repeat
+}
+
+.doctorlist li span {
+    display: block;
+    line-height: 24px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctorlist li span b {
+    color: #1e9eb9;
+    font-weight: 400
+}
+
+.doctorlist li p {
+    clear: both;
+    line-height: 14px;
+    margin-top: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidedoctorlist li {
+    padding: 18px 0
+}
+
+.sidedoctorlist li strong {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidedoctorlist li strong i {
+    font-size: 14px;
+    margin-left: 10px
+}
+
+.sidedoctorlist li strong.gua a {
+    padding-right: 40px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat
+}
+
+.sidedoctorlist li span {
+    display: block;
+    line-height: 24px;
+    margin-top: 12px;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.sidepicdoctor li {
+    height: 100px;
+    padding: 20px 0;
+    overflow: hidden
+}
+
+.sidepicdoctor li img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 10px
+}
+
+.sidepicdoctor li strong {
+    display: block;
+    font-weight: 400;
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidepicdoctor li strong a {
+    font-size: 16px;
+    margin-right: 10px
+}
+
+.sidepicdoctor li p {
+    margin-top: 5px;
+    color: #666;
+    line-height: 24px;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.sidepicdoctor li span {
+    display: block;
+    line-height: 22px;
+    margin-top: 6px
+}
+
+.sidepicdoctor li span a {
+    display: inline-block;
+    text-align: center;
+    width: 78px;
+    height: 22px;
+    color: #1e9cb9;
+    border: #1e9cb9 1px solid;
+    border-radius: 5px;
+    margin-right: 10px
+}
+
+.sidepicdoctor li span a:last-child {
+    color: #ff9023;
+    border-color: #ff9023;
+    margin-right: 0
+}
+
+.sidepicdoctor li span a:hover {
+    color: #fff;
+    background: #1e9cb9;
+    text-decoration: none
+}
+
+.sidepicdoctor li span a:last-child:hover {
+    background: #ff9023
+}
+
+.clientdoctorlist li {
+    float: left;
+    width: 400px;
+    height: 160px;
+    padding: 20px 0;
+    margin-right: 40px;
+    overflow: hidden
+}
+
+.clientdoctorlist li:nth-child(2n) {
+    margin-right: 0
+}
+
+.clientdoctorlist li img {
+    float: left;
+    width: 128px;
+    height: 160px;
+    border-radius: 5px;
+    margin-right: 20px
+}
+
+.clientdoctorlist li strong {
+    display: block;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.clientdoctorlist li strong.yue a {
+    padding-right: 30px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_yue.png) right center no-repeat
+}
+
+.clientdoctorlist li p {
+    margin-top: 10px;
+    color: #999;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.clientdoctorlist li p:nth-child(4) {
+    white-space: normal;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.clientdoctorlist li p b {
+    font-weight: 400;
+    color: #333
+}
+
+.clientdoctorlist li span {
+    display: block;
+    line-height: 28px;
+    margin-top: 15px
+}
+
+.clientdoctorlist li span a {
+    display: inline-block;
+    text-align: center;
+    width: 118px;
+    height: 28px;
+    color: #1e9cb9;
+    border: #1e9cb9 1px solid;
+    border-radius: 5px;
+    margin-right: 10px
+}
+
+.clientdoctorlist li span a:last-child {
+    color: #ff9023;
+    border-color: #ff9023;
+    margin-right: 0
+}
+
+.clientdoctorlist li span a:hover {
+    color: #fff;
+    background: #1e9cb9;
+    text-decoration: none
+}
+
+.clientdoctorlist li span a:last-child:hover {
+    background: #ff9023
+}
+
+.alldoctor {
+    margin-top: 15px;
+    line-height: 40px;
+    overflow: hidden
+}
+
+.alldoctor a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.alldoctor .yue a {
+    padding-right: 35px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_yue.png) right 10px center no-repeat
+}
+
+.doctorfulllist li {
+    height: 100px;
+    padding: 20px 0;
+    border-bottom: #f0f0f0 1px dashed;
+    overflow: hidden;
+    position: relative
+}
+
+.doctorfulllist li img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px
+}
+
+.doctorfulllist li strong {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px
+}
+
+.doctorfulllist li strong i {
+    height: 20px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    max-width: 475px;
+    padding-right: 40px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctorfulllist li strong.ren i {
+    padding-right: 90px;
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_ren.png)
+}
+
+.doctorfulllist li strong.gua i {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png)
+}
+
+.doctorfulllist li p {
+    width: 630px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctorfulllist li p a {
+    color: #1e9eb9
+}
+
+.doctorfulllist li div {
+    position: absolute;
+    right: 0;
+    bottom: 20px
+}
+
+.doctorfulllist li div a {
+    display: block;
+    width: 98px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: auto;
+    text-align: center;
+    color: #38abbb;
+    border: #38abbb 1px solid;
+    border-radius: 3px
+}
+
+.doctorfulllist li div a:hover {
+    color: #fff;
+    background: #38abbb;
+    text-decoration: none
+}
+
+.doctorfulllist li div.book a {
+    background: #ff9023;
+    border-color: #ff9023;
+    color: #fff
+}
+
+.doctorfulllist li div span {
+    display: block;
+    line-height: 14px;
+    margin-top: 40px
+}
+
+.doctorfulllist li div b {
+    color: #2ca1bb;
+    font-weight: 400;
+    margin-right: 5px
+}
+
+.doctortable li {
+    padding: 20px 0;
+    height: 100px;
+    border-bottom: #f0f0f0 1px dashed;
+    overflow: hidden
+}
+
+.doctortable li div {
+    float: left
+}
+
+.doctortable li div:first-child {
+    width: 300px;
+    padding-right: 19px;
+    border-right: #f0f0f0 1px solid
+}
+
+.doctortable li div:first-child img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    margin-right: 12px;
+    border-radius: 5px
+}
+
+.doctortable li div:first-child strong {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px
+}
+
+.doctortable li div:first-child strong a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctortable li div:first-child strong.gua a {
+    padding-right: 40px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat
+}
+
+.doctortable li div:first-child p {
+    color: #666;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctortable li div:first-child p a {
+    color: #666
+}
+
+.doctortable li div:first-child p a:hover {
+    color: #ff9023
+}
+
+.doctortable li div:nth-child(2) {
+    width: 459px;
+    padding: 0 55px;
+    border-right: #f0f0f0 1px solid
+}
+
+.doctortable li div:nth-child(2) p {
+    line-height: 25px;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4
+}
+
+.doctortable li div:nth-child(2) p b {
+    font-weight: 400;
+    color: #333
+}
+
+.doctortable li div:last-child {
+    width: 270px;
+    text-align: center;
+    line-height: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctortable li div:last-child a {
+    color: #1e9eb9;
+    margin-right: 5px
+}
+
+.doctortable li div:last-child a:hover {
+    color: #ff9023
+}
+
+.clientdoctortable li {
+    padding: 20px 0;
+    height: 100px;
+    border-bottom: #f0f0f0 1px dashed;
+    overflow: hidden
+}
+
+.clientdoctortable li div {
+    float: left
+}
+
+.clientdoctortable li div:first-child {
+    width: 250px;
+    padding-right: 19px;
+    border-right: #f0f0f0 1px solid
+}
+
+.clientdoctortable li div:first-child img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    margin-right: 12px;
+    border-radius: 5px
+}
+
+.clientdoctortable li div:first-child strong {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px
+}
+
+.clientdoctortable li div:first-child strong a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.clientdoctortable li div:first-child strong.gua a {
+    padding-right: 40px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat
+}
+
+.clientdoctortable li div:first-child p {
+    color: #666;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.clientdoctortable li div:first-child p a {
+    color: #666
+}
+
+.clientdoctortable li div:first-child p a:hover {
+    color: #ff9023
+}
+
+.clientdoctortable li div:nth-child(2) {
+    width: 439px;
+    padding: 0 55px;
+    border-right: #f0f0f0 1px solid
+}
+
+.clientdoctortable li div:nth-child(2) p {
+    line-height: 25px;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4
+}
+
+.clientdoctortable li div:nth-child(2) p b {
+    font-weight: 400;
+    color: #333
+}
+
+.clientdoctortable li div:nth-child(3) {
+    width: 178px;
+    text-align: center;
+    line-height: 100px;
+    border-right: #f0f0f0 1px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.clientdoctortable li div:nth-child(3) a {
+    color: #1e9eb9;
+    margin-right: 5px
+}
+
+.clientdoctortable li div:nth-child(3) a:hover {
+    color: #ff9023
+}
+
+.clientdoctortable li div:last-child {
+    float: right;
+    width: 161px
+}
+
+.clientdoctortable li div:last-child a {
+    display: block;
+    margin: 18px auto 0;
+    text-align: center;
+    width: 98px;
+    height: 22px;
+    line-height: 22px;
+    color: #1e9cb9;
+    border: #1e9cb9 1px solid;
+    border-radius: 5px
+}
+
+.clientdoctortable li div:last-child a:last-child {
+    color: #ff9023;
+    border-color: #ff9023
+}
+
+.clientdoctortable li div:last-child a:hover {
+    color: #fff;
+    background: #1e9cb9;
+    text-decoration: none
+}
+
+.clientdoctortable li div:last-child a:last-child:hover {
+    background: #ff9023
+}
+
+.indexpiclist {
+    overflow: hidden
+}
+
+.indexpiclist li {
+    float: left;
+    width: 120px;
+    height: 90px;
+    margin: 20px 24px 0 0
+}
+
+.indexpiclist li:nth-child(6n) {
+    margin-right: 0
+}
+
+.indexpiclist li img {
+    width: 100%;
+    height: 100%
+}
+
+.hospitaldetail {
+    line-height: 24px;
+    padding-top: 17px;
+    padding-bottom: 10px
+}
+
+.hospitaldetail p {
+    margin-top: 10px;
+    overflow: hidden
+}
+
+.hospitaldetail p em {
+    color: #666;
+    padding-left: 25px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitalintro.png) left center no-repeat
+}
+
+.hospitaldetail p span {
+    color: #333;
+    float: right;
+    width: 720px
+}
+
+.hospitaldetail p span a {
+    color: #1e9eb9;
+    padding-left: 22px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_book.png) left center no-repeat;
+    margin-left: 20px
+}
+
+.hospitaldetail p span a:hover {
+    color: #ff9023
+}
+
+.hospitaldetail p.intro em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitalintro.png)
+}
+
+.hospitaldetail p.intro span a {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_book.png)
+}
+
+.hospitaldetail p.address em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitallocation.png)
+}
+
+.hospitaldetail p.address span a {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_map.png)
+}
+
+.hospitaldetail p.tel em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitaltel.png)
+}
+
+.hospitaldetail p.process,
+.hospitaldetail p.branch {
+    line-height: 30px;
+    padding-top: 14px;
+    margin-top: 14px;
+    border-top: #f0f0f0 1px solid
+}
+
+.hospitaldetail p.process em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitalprocess.png)
+}
+
+.hospitaldetail p.process span a {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_safari.png)
+}
+
+.hospitaldetail p.branch em {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_hospitalbranch.png)
+}
+
+.hospitaldetail p.branch span a {
+    padding-left: 0;
+    margin-left: 0;
+    background: 0 0
+}
+
+.sidehospitallist li {
+    padding: 18px 0
+}
+
+.sidehospitallist li strong {
+    display: block;
+    line-height: 18px;
+    font-weight: 400
+}
+
+.sidehospitallist li strong a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidehospitallist li strong.gua a {
+    padding-right: 40px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat
+}
+
+.sidehospitallist li span {
+    display: block;
+    line-height: 14px;
+    margin-top: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidepichospital li {
+    height: 73px;
+    padding: 20px 0;
+    overflow: hidden
+}
+
+.sidepichospital li img {
+    float: left;
+    width: 98px;
+    height: 71px;
+    border: #f0f0f0 1px solid;
+    border-radius: 5px;
+    margin-right: 10px
+}
+
+.sidepichospital li strong {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: -4px;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.sidepichospital li span {
+    display: block;
+    line-height: 22px;
+    margin-top: 4px
+}
+
+.sidepichospital li span a {
+    display: inline-block;
+    text-align: center;
+    width: 66px;
+    height: 22px;
+    color: #1e9cb9;
+    border: #1e9cb9 1px solid;
+    border-radius: 5px;
+    margin-right: 12px
+}
+
+.sidepichospital li span a:last-child {
+    color: #ff9023;
+    border-color: #ff9023;
+    margin-right: 0
+}
+
+.sidepichospital li span a:hover {
+    color: #fff;
+    background: #1e9cb9;
+    text-decoration: none
+}
+
+.sidepichospital li span a:last-child:hover {
+    background: #ff9023
+}
+
+.hospitalfulllist li {
+    height: 100px;
+    padding: 20px 0;
+    border-bottom: #f0f0f0 1px dashed;
+    overflow: hidden;
+    position: relative
+}
+
+.hospitalfulllist li img {
+    float: left;
+    width: 138px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px
+}
+
+.hospitalfulllist li strong {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 8px
+}
+
+.hospitalfulllist li strong a {
+    display: inline-block;
+    max-width: 460px;
+    padding-right: 55px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.hospitalfulllist li strong.ren a {
+    padding-right: 100px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_ren.png) right center no-repeat
+}
+
+.hospitalfulllist li strong.gua a {
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_gua.png) right center no-repeat
+}
+
+.hospitalfulllist li p {
+    width: 560px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.hospitalfulllist li p a {
+    color: #1e9eb9
+}
+
+.hospitalfulllist li div {
+    position: absolute;
+    right: 0;
+    bottom: 20px
+}
+
+.hospitalfulllist li div a {
+    display: block;
+    width: 98px;
+    height: 28px;
+    line-height: 28px;
+    margin-left: auto;
+    text-align: center;
+    color: #38abbb;
+    border: #38abbb 1px solid;
+    border-radius: 3px
+}
+
+.hospitalfulllist li div a:hover {
+    color: #fff;
+    background: #38abbb;
+    text-decoration: none
+}
+
+.hospitalfulllist li div.book a {
+    background: #ff9023;
+    border-color: #ff9023;
+    color: #fff
+}
+
+.hospitalfulllist li div span {
+    display: block;
+    line-height: 14px;
+    margin-top: 40px
+}
+
+.hospitalfulllist li div b {
+    color: #2ca1bb;
+    font-weight: 400;
+    margin-right: 5px
+}
+
+.filter {
+    padding-top: 12px;
+    padding-bottom: 24px
+}
+
+.filter .bydep {
+    margin-bottom: 15px;
+    overflow: hidden
+}
+
+.filter .bydep .tabnav span {
+    display: block;
+    float: left;
+    height: 60px
+}
+
+.filter .bydep .tabnav em {
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px
+}
+
+.filter .bydep .tabnav em.current,
+.filter .bydep .tabnav em:hover {
+    color: #1e9eb9
+}
+
+.filter .bydep .tabnav em.current {
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/arrow_current_grey.png) center bottom no-repeat
+}
+
+.filter .bydep .tabcontent {
+    width: 1089px;
+    padding: 8px 0;
+    line-height: 26px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    float: right
+}
+
+.filter .bydep .tabcontent a {
+    color: #666;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 12px
+}
+
+.filter .bydep .tabcontent a.current,
+.filter .bydep .tabcontent a:hover {
+    color: #1e9eb9
+}
+
+.filter .bydisease {
+    line-height: 24px
+}
+
+.filter .bydisease a {
+    display: inline-block;
+    padding: 0 10px;
+    margin: 0 2px;
+    border-radius: 5px;
+    vertical-align: top
+}
+
+.filter .bydisease a.current,
+.filter .bydisease a:hover {
+    background: #38abbb;
+    color: #fff;
+    text-decoration: none
+}
+
+.filter .bydisease .alldisease {
+    display: inline-block;
+    color: #666;
+    padding: 0 27px 0 10px;
+    margin: 0 2px;
+    border-radius: 5px;
+    background: #f0f0f0 url(https://image.39.net/dist/yyk/v3/pc/images/arrow_select.png) right 10px center no-repeat;
+    vertical-align: top;
+    cursor: pointer;
+    position: relative
+}
+
+.filter .bydisease .letterselector {
+    display: none;
+    width: 480px;
+    padding: 0 20px 20px;
+    line-height: 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, .2) 0 1px 3px 0;
+    position: absolute;
+    right: 0;
+    top: 35px;
+    z-index: 800
+}
+
+.filter .bydisease .letterselector strong {
+    display: block;
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 400
+}
+
+.filter .bydisease .letterselector .tabnav {
+    float: left;
+    width: 164px
+}
+
+.filter .bydisease .letterselector .tabnav em {
+    float: left;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: #f8f8f8;
+    margin: 0 1px 1px 0
+}
+
+.filter .bydisease .letterselector .tabnav em.current,
+.filter .bydisease .letterselector .tabnav em:hover {
+    background: #38abbb;
+    color: #fff
+}
+
+.filter .bydisease .letterselector .tabcontent {
+    float: right;
+    width: 296px;
+    height: 246px
+}
+
+.filter .bydisease .letterselector .tabcontent .tabsingle {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto
+}
+
+.filter .bydisease .letterselector .tabcontent li {
+    float: left;
+    width: 50%
+}
+
+.filter .bydisease .letterselector .tabcontent li a {
+    margin: 0;
+    max-width: 119px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.doctortags {
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 20px;
+    overflow: hidden
+}
+
+.doctortags a {
+    margin: 0 10px 10px 0;
+    border-radius: 26px;
+    color: #999
+}
+
+.doctortags .bythis {
+    float: left;
+    width: 100px
+}
+
+.doctortags .foldcontent {
+    float: right;
+    width: 740px;
+    overflow: hidden
+}
+
+.doctortags .foldcontent.folded {
+    height: 26px
+}
+
+.doctortags .foldcontent span {
+    display: none;
+    float: right;
+    margin-left: 10px;
+    padding-right: 18px;
+    color: #1e9eb9;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/arrow_extend.png) right center no-repeat;
+    cursor: pointer
+}
+
+.doctortags .foldcontent span.fold {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/arrow_fold.png)
+}
+
+.commentform {
+    line-height: 28px
+}
+
+.commentform .formitem {
+    color: #666;
+    margin-top: 20px;
+    overflow: hidden
+}
+
+.commentform .formitem label {
+    float: left;
+    width: 90px;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_required.png) left center no-repeat
+}
+
+.commentform .formitem input[type=text] {
+    width: 240px;
+    height: 28px;
+    text-indent: 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    margin-right: 20px
+}
+
+.commentform .formitem input[type=checkbox] {
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.commentform .doctortags {
+    margin-top: 10px;
+    padding-bottom: 10px
+}
+
+.commentform .formitem textarea {
+    float: right;
+    width: 720px;
+    height: 168px;
+    line-height: 28px;
+    padding: 3px 10px;
+    background: #f8f8f8;
+    border-radius: 5px;
+    resize: none
+}
+
+.commentform .formitem.fl {
+    float: left;
+    width: 420px;
+    line-height: 20px;
+    margin-top: 40px
+}
+
+.commentform button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background: #ff9023;
+    border-radius: 5px;
+    margin: 40px auto 0;
+    clear: both;
+    cursor: pointer
+}
+
+.calendar {
+    padding: 0
+}
+
+.calendar .title {
+    padding-left: 20px
+}
+
+.calendar table {
+    width: 100%
+}
+
+.calendar table th,
+.calendar table td {
+    border: #f0f0f0 1px solid;
+    font-weight: 400;
+    text-align: center;
+    width: 111px
+}
+
+.calendar table th {
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+    height: 64px;
+    border-top: 0
+}
+
+.calendar table th i {
+    display: block
+}
+
+.calendar table td {
+    height: 142px;
+    line-height: 30px;
+    color: #333;
+    text-align: left;
+    overflow: hidden
+}
+
+.calendar table td p {
+    width: 81px;
+    padding: 0 15px
+}
+
+.calendar table td p a {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.calendar table td p.yue a {
+    padding-right: 25px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_yue.png) right center no-repeat
+}
+
+.calendar table th:first-child {
+    width: auto;
+    border-left: 0
+}
+
+.calendar table td:first-child {
+    text-align: center;
+    font-size: 16px;
+    color: #1e9eb9;
+    width: auto;
+    border-left: 0
+}
+
+.calendar table th:last-child,
+.calendar table td:last-child {
+    border-right: 0
+}
+
+.calendar tbody tr:last-child td {
+    border-bottom: 0
+}
+
+.calendar table th:nth-child(2n+3),
+.calendar table td:nth-child(2n+3) {
+    background: #fcfcfc
+}
+
+.doctorcalendar {
+    padding: 0
+}
+
+.doctorcalendar .calendartable {
+    border: #f0f0f0 1px solid;
+    border-left: 0;
+    border-right: 0;
+    overflow: hidden
+}
+
+.doctorcalendar .calendartable .ampm {
+    float: left;
+    width: 95px;
+    font-size: 16px;
+    color: #666;
+    line-height: 64px;
+    text-align: center;
+    border-right: #f0f0f0 1px solid
+}
+
+.doctorcalendar .calendartable .ampm em {
+    display: block;
+    border-bottom: #f0f0f0 1px solid
+}
+
+.doctorcalendar .calendartable .ampm em:last-child {
+    border-bottom: 0
+}
+
+.doctorcalendar .calendarrules {
+    padding: 0 20px 35px;
+    line-height: 24px
+}
+
+.doctorcalendar .calendarrules p:first-child {
+    padding: 14px 0 6px
+}
+
+.hospitalselect {
+    line-height: 20px;
+    height: 20px;
+    padding: 20px 0;
+    color: #333;
+    position: relative
+}
+
+.hospitalselect .swiper-slide {
+    width: auto
+}
+
+.hospitalselect em {
+    display: inline-block;
+    border-right: #f0f0f0 1px solid;
+    padding: 0 20px;
+    cursor: pointer
+}
+
+.hospitalselect .swiper-slide:last-child em {
+    border-right: 0
+}
+
+.hospitalselect .swiper-slide.swiper-slide-active em {
+    font-weight: 700;
+    color: #1e9cb9
+}
+
+.hospitalselect .swiper-button-prev,
+.hospitalselect .swiper-button-next {
+    width: 69px;
+    height: 60px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/slide_61.png) left center no-repeat;
+    margin-top: 0;
+    top: 0
+}
+
+.hospitalselect .swiper-button-prev {
+    left: 0
+}
+
+.hospitalselect .swiper-button-next {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/slide_62.png);
+    right: 0
+}
+
+.muticalendar {
+    float: right;
+    width: 784px
+}
+
+.muticalendar .nodata {
+    height: 259px;
+    line-height: 259px;
+    text-align: center
+}
+
+.dateselect {
+    position: relative;
+    padding: 0 45px
+}
+
+.dateselect table {
+    width: 100%
+}
+
+.dateselect table th,
+.dateselect table td {
+    border: #f0f0f0 1px solid;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    width: 99px;
+    height: 64px
+}
+
+.dateselect table tbody tr:last-child td {
+    border-bottom: 0
+}
+
+.dateselect table th {
+    line-height: 26px;
+    border-top: 0
+}
+
+.dateselect table th i {
+    display: block
+}
+
+.dateselect table td i {
+    display: block;
+    width: 95px;
+    height: 60px;
+    line-height: 60px;
+    background: #d2ecf1;
+    color: #1e9cb9;
+    margin: 2px;
+    border-radius: 3px;
+    overflow: hidden
+}
+
+.dateselect table td i a {
+    display: block
+}
+
+.dateselect table td i a:hover {
+    text-decoration: none
+}
+
+.dateselect table td i.blue,
+.dateselect table td i.blue a {
+    background: #d2ecf1;
+    color: #1e9cb9
+}
+
+.dateselect table td i.orange,
+.dateselect table td i.orange a {
+    background: #fee7b2;
+    color: #ff9023
+}
+
+.dateselect table td i.grey,
+.dateselect table td i.grey a {
+    background: #f0f0f0;
+    color: #999
+}
+
+.dateselect .swiper-button-prev,
+.dateselect .swiper-button-next {
+    width: 15px;
+    height: 29px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/slide_11.png);
+    margin-top: -15px;
+    top: 50%;
+    opacity: 1
+}
+
+.dateselect .swiper-button-prev {
+    left: 15px
+}
+
+.dateselect .swiper-button-prev.swiper-button-disabled {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/slide_21.png)
+}
+
+.dateselect .swiper-button-next {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/slide_12.png);
+    right: 15px
+}
+
+.dateselect .swiper-button-next.swiper-button-disabled {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/slide_22.png)
+}
+
+.introduction {
+    margin-bottom: -20px
+}
+
+.introduction .hospitaltags {
+    margin: 20px 0;
+    overflow: hidden
+}
+
+.introduction .hospitaltags li {
+    float: left;
+    width: 100px;
+    height: 60px;
+    padding: 0 10px;
+    margin-right: 24px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #1e9eb9;
+    text-align: center;
+    background: #ebf7fa;
+    border-radius: 60px
+}
+
+.introduction .hospitaltags li:nth-child(6n) {
+    margin-right: 0
+}
+
+.introduction .hospitaltags li.green {
+    color: #0fb249;
+    background: #ebfaef
+}
+
+.introduction .hospitaltags li.green b {
+    display: inline-block;
+    max-height: 48px;
+    line-height: 24px;
+    font-size: 14px;
+    vertical-align: middle;
+    overflow: hidden
+}
+
+.introduction dl {
+    padding: 10px 0;
+    color: #666;
+    border-top: #f0f0f0 1px dashed;
+    overflow: hidden
+}
+
+.introduction dl b {
+    color: #333;
+    font-weight: 400;
+    margin-right: 40px
+}
+
+.introduction dt {
+    float: left;
+    width: 50px
+}
+
+.introduction dd {
+    float: right;
+    width: 790px;
+    color: #333
+}
+
+.introduction .address a {
+    color: #1e9eb9;
+    padding-left: 22px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_map.png) left center no-repeat;
+    margin-left: 20px
+}
+
+.introduction .blockart {
+    padding: 24px 0;
+    border-top: #f0f0f0 1px dashed
+}
+
+.introduction .blockart strong {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    padding-left: 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/line_3x16.png) left center no-repeat
+}
+
+.hospitaladdress {
+    padding-top: 28px
+}
+
+.hospitaladdress dl {
+    color: #666;
+    overflow: hidden
+}
+
+.hospitaladdress dt {
+    float: left;
+    width: 50px
+}
+
+.hospitaladdress dd {
+    float: right;
+    width: 790px;
+    color: #333
+}
+
+.hospitalmap {
+    margin-top: 28px;
+    border-top: #f0f0f0 1px dashed
+}
+
+.hospitalmap .seeinbaidu {
+    line-height: 56px;
+    padding-left: 20px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_map.png) left center no-repeat
+}
+
+.hospitalmap .seeinbaidu a {
+    color: #1e9eb9
+}
+
+.hospitalmap .seeinbaidu a:hover {
+    color: #ff9023
+}
+
+.mapframe {
+    width: 100%;
+    height: 590px
+}
+
+.mapframe img {
+    width: 100%;
+    height: 100%
+}
+
+.environment dl {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: #f0f0f0 1px dashed;
+    overflow: hidden
+}
+
+.environment dl:last-child {
+    padding-bottom: 0;
+    border-bottom: 0
+}
+
+.environment dt {
+    font-weight: 700;
+    color: #333;
+    font-size: 16px;
+    line-height: 16px;
+    padding-left: 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/line_3x16.png) left center no-repeat
+}
+
+.environment dd {
+    float: left;
+    width: 120px;
+    line-height: 14px;
+    color: #333;
+    margin: 20px 24px 0 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.environment dd:nth-child(6n+1) {
+    margin-right: 0
+}
+
+.environment dd img {
+    display: block;
+    width: 120px;
+    height: 90px;
+    margin-bottom: 10px
+}
+
+.hotdepartment {
+    overflow: hidden;
+    padding-top: 20px
+}
+
+.hotdepartment li {
+    float: left;
+    width: 400px;
+    padding: 0 19px 0 0;
+    border-right: #f0f0f0 1px dashed
+}
+
+.hotdepartment li:nth-child(2n) {
+    padding: 0 0 0 19px;
+    border-right: 0
+}
+
+.hotdepartment li strong {
+    display: block;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 2px 0 14px
+}
+
+.hotdepartment li strong a {
+    display: inline-block;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.hotdepartment li strong.guo a {
+    padding-right: 35px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_word_guo.png) right 10px center no-repeat
+}
+
+.hotdepartment li p {
+    line-height: 24px;
+    color: #666;
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+    border-bottom: #f0f0f0 1px dashed;
+    height: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3
+}
+
+.hotdepartment li:nth-last-child(1),
+.hotdepartment li:nth-last-child(2) {
+    margin-bottom: 35px
+}
+
+.hotdepartment li:nth-last-child(1) p,
+.hotdepartment li:nth-last-child(2) p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0
+}
+
+.clientdepartment {
+    font-size: 16px;
+    line-height: 26px;
+    overflow: hidden
+}
+
+.clientdepartment .title a {
+    float: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e9eb9;
+    padding-right: 0;
+    background: 0 0
+}
+
+.clientdepartment .title a:hover {
+    text-decoration: none
+}
+
+.clientdepartment span {
+    display: block;
+    color: #333;
+    padding: 15px 0
+}
+
+.clientdepartment span a {
+    color: #999
+}
+
+.clientdepartment span a:hover {
+    color: #ff9023
+}
+
+.clientdepartment strong {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    line-height: 16px;
+    padding: 20px 0 20px 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/line_3x16.png) left center no-repeat;
+    border-top: #f0f0f0 1px dashed
+}
+
+.clientdepartment img {
+    float: left;
+    width: 80px;
+    height: 100px;
+    margin-right: 12px;
+    border-radius: 5px
+}
+
+.clientdepartment p {
+    color: #666;
+    margin-top: 7px
+}
+
+.clientdepartment p:last-child {
+    margin-top: 10px;
+    height: 52px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.clientdepartment p b {
+    color: #333;
+    font-weight: 400
+}
+
+.guide .blockart {
+    margin-top: 40px
+}
+
+.guide .blockart strong {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    padding-left: 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/line_3x16.png) left center no-repeat
+}
+
+.newslist li {
+    padding-top: 20px;
+    border-bottom: #f0f0f0 1px dashed
+}
+
+.newslist li strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.newslist li strong i {
+    float: right;
+    font-size: 14px;
+    color: #999
+}
+
+.newslist li p {
+    color: #666;
+    line-height: 24px;
+    margin: 15px 0;
+    height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2
+}
+
+.qna {
+    padding-bottom: 30px
+}
+
+.qna .question {
+    padding-bottom: 20px;
+    border-bottom: #f0f0f0 1px dashed
+}
+
+.qna .question h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    line-height: 36px;
+    padding-top: 15px
+}
+
+.qna .question span {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 16px
+}
+
+.qna .question span a {
+    color: #1e9eb9
+}
+
+.qna .question span a:hover {
+    color: #ff9023
+}
+
+.qna .question span i {
+    float: right;
+    font-size: 14px
+}
+
+.qna dl {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 38px 0;
+    border-bottom: #f0f0f0 1px dashed
+}
+
+.qna dt {
+    padding-left: 30px;
+    color: #333;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_question.png) left 3px no-repeat
+}
+
+.qna dd {
+    margin-top: 24px;
+    padding-left: 30px;
+    color: #666;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_answer.png) left 3px no-repeat
+}
+
+.qna .qnarelative strong {
+    display: block;
+    margin: 20px 0 10px;
+    color: #333;
+    font-size: 16px;
+    line-height: 16px;
+    padding-left: 10px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/line_3x16.png) left center no-repeat
+}
+
+.qna .qnarelative .normallist {
+    line-height: 30px
+}
+
+.clientbutton ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px
+}
+
+.clientbutton li {
+    width: 278px;
+    height: 98px;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    background: #eff6e9;
+    border: #dae8d3 1px solid;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative
+}
+
+.clientbutton li a {
+    color: #6ba94b;
+    display: block;
+    height: 100%
+}
+
+.clientbutton li a:hover {
+    text-decoration: none
+}
+
+.clientbutton li b {
+    display: block;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: left;
+    padding-left: 115px;
+    margin: 27px 0 15px;
+    background: url(https://image.39.net/dist/yyk/v3/pc/images/icon_clientask.png) 90px center no-repeat
+}
+
+.clientbutton li:nth-child(2) {
+    background: #eff8fa;
+    border-color: #cee8ed
+}
+
+.clientbutton li:nth-child(2) a {
+    color: #1e9eb9
+}
+
+.clientbutton li:nth-child(2) b {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_clientphone.png)
+}
+
+.clientbutton li:nth-child(3) {
+    background: #fff0d9;
+    border-color: #fcddaf
+}
+
+.clientbutton li:nth-child(3) a {
+    color: #f90
+}
+
+.clientbutton li:nth-child(3) b {
+    background-image: url(https://image.39.net/dist/yyk/v3/pc/images/icon_clientappointment.png)
+}
+
+.sidereadme {
+    color: #666;
+    line-height: 24px;
+    padding-bottom: 15px
+}
+
+.sidereadme li {
+    margin-top: 15px;
+    overflow: hidden
+}
+
+.sidereadme li i {
+    float: left;
+    width: 77px
+}
+
+.sidereadme li p {
+    float: right;
+    width: 183px;
+    color: #333
+}
+
+.sidereadme li p a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #2ca1bb
+}
+
+.sidereadme li p a:hover {
+    color: #ff9023
+}
+
+.sidemedicine {
+    overflow: hidden;
+    padding-bottom: 15px
+}
+
+.sidemedicine li {
+    width: 74px;
+    float: left;
+    margin: 20px 19px 0 0
+}
+
+.sidemedicine li:nth-child(3n) {
+    margin-right: 0
+}
+
+.sidemedicine li img {
+    width: 72px;
+    height: 54px;
+    border: #f0f0f0 1px solid;
+    border-radius: 5px
+}
+
+.sidemedicine li p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.sidesearch input {
+    width: 199px;
+    height: 33px;
+    line-height: 33px;
+    border: #38abbb 1px solid;
+    border-radius: 3px 0 0 3px;
+    text-indent: 10px
+}
+
+.sidesearch button {
+    width: 59px;
+    line-height: 35px;
+    color: #fff;
+    background: #38abbb;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer
+}
+
+.sidemap {
+    width: 260px;
+    height: 260px
+}
+
+.sidemap img {
+    width: 100%;
+    height: 100%
+}
+
+.newbot {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 68px;
+    z-index: 9999;
+    background: repeat url(http://image.39.net/daoyi/images2013/newbot_bg.png)
+}
+
+.newbot .newbot_main {
+    height: 68px;
+    overflow: hidden;
+    position: relative
+}
+
+.newbot .newbot_close {
+    width: 24px;
+    height: 24px;
+    background: no-repeat url(http://image.39.net/daoyi/images2013/newbot_close.png);
+    position: absolute;
+    top: 8px;
+    right: 5px
+}
+
+.newbot .newbot_con {
+    width: 980px;
+    margin: 0 auto;
+    height: 68px;
+    background: no-repeat url(http://image.39.net/daoyi/images2013/newbot_main.png) 420px 20px
+}
+
+.newbot .newbot_con span {
+    display: inline-block;
+    color: #FFF;
+    vertical-align: top
+}
+
+.newbot .newbot_con .newbot_s1 {
+    margin: 9px 0 0 107px;
+    width: 187px;
+    font-family: Verdana
+}
+
+.newbot .newbot_con .newbot_s1 b {
+    color: #FB0;
+    font: 18px/32px 'Microsoft Yahei'
+}
+
+.newbot .newbot_con .newbot_s1 cite {
+    display: block;
+    line-height: 12px
+}
+
+.newbot .newbot_con .newbot_s2 {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 14px 0 0;
+    width: 268px
+}
+
+.newbot .newbot_con .newbot_s3 {
+    margin: 8px 18px 0 0
+}
+
+.newbot .newbot_con .newbot_s3 a {
+    display: inline-block;
+    width: 100px;
+    height: 53px;
+    background: no-repeat url(http://image.39.net/daoyi/images2013/newbot_btn.gif) 0 0
+}
+
+.newbot .newbot_con .newbot_s3 a:hover {
+    background-position: 0 -53px
+}
+
+.newbot .newbot_con .newbot_s4 a {
+    display: inline-block;
+    width: 100px;
+    height: 53px;
+    background: no-repeat url(http://image.39.net/daoyi/images2013/newbot_btn.gif) -100px 0;
+    margin: 8px 18px 0 0
+}
+
+.newbot .newbot_con .newbot_s4 a:hover {
+    background-position: -100px -53px
+}
+
+.newbot .newbot_con .newbot_s5 {
+    width: 128px;
+    height: 68px;
+    overflow: hidden
+}
+
+.newbot .newbot_con .newbot_s5 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(http://image.39.net/daoyi/images2013/newbot_s5.gif) no-repeat right top
+}
+
+.newbot .newbot_dis .newbot_s3 a {
+    background: no-repeat url(http://image.39.net/daoyi/images2013/newbot_btn_gray.gif) 0 0;
+    cursor: default
+}
+
+.newbot .newbot_dis .newbot_s3 a:hover {
+    background-position: 0 0
+}
+
+.explain {
+    color: red;
+    font-size: 14px;
+    line-height: 21px
+}
+
+.big {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    display: none
+}
+
+.big .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1011;
+    background: #999;
+    opacity: .6
+}
+
+.big .czts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background: #4c4c4c;
+    color: #fff;
+    z-index: 1012;
+    border-radius: 5px;
+    padding: 0 10px
+}

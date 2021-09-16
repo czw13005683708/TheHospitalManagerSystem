@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/layui.css">
+    <script src="./layui.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <title>缴费账单</title>
+</head>
+<body style="height: 100%; width:100% ;">
+    <div style="padding: 15px;">
+                <!-- 面包屑 -->
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <span class="layui-breadcrumb">
+                <a href="/">费用管理</a>
+                <a href="/">门诊收费</a>
+                <a><cite>患者缴费</cite></a>
+            </span>
+        </fieldset>
+        <!-- 面包屑 -->
+        
+        <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            患者账单
+        </blockquote>
+
+
+        <!-- 余额显示 -->
+        <div class="balance">
+            <hr>
+            <div style="margin: 10px 60px; background-color: rgb(242, 249, 255);">
+            <div class="layui-row" >
+                <div class="layui-col-xs4 layui-col-md-offset3">
+                <span>姓名:</span>
+                <span>张珊</span>
+                </div>
+                <div class="layui-col-xs4">
+                <span>性别:</span>
+                <span>女</span>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4 layui-col-md-offset3">
+                <span>卡号:</span>
+                <span>4513545351</span>
+                </div>
+                <div class="layui-col-xs4">
+                <span>余额:</span>
+                <span>￥4200.00</span>
+                </div>
+            </div>
+                
+    
+            </div>
+            <hr>
+        </div>
+        <!-- 余额显示 -->
+
+            <!-- 挂号费用 -->
+        <div class="balance">
+            <hr>
+            <div style="margin: 10px 60px; background-color: rgb(242, 249, 255);">
+            <div class="layui-row" >
+                <div class="layui-col-xs4 layui-col-md-offset3">
+                <span>科室:</span>
+                <span>心血管内科</span>
+                </div>
+                <div class="layui-col-xs4">
+                <span>医生:</span>
+                <span>吴杰</span>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4 layui-col-md-offset3">
+                <span>挂号费:</span>
+                <span>15</span>
+                </div>
+                <div class="layui-col-xs4">
+                <span>是否缴费:</span>
+                <span>已缴</span>
+                </div>
+            </div>
+    
+            </div>
+            <hr>
+        </div>
+        <form class="layui-form" action="post" style="margin-top: 15px;">
+            <div class="layui-form-item " style="text-align: center;">
+            <span  class="" style=" font-size: 16px;  line-height: 38px; height: 38px;">挂号费: &nbsp;￥ </span>
+            <input  class="layui-input" type="text" placeholder="00.00" value="00.00" style="width: 100px;display: inline;">
+            </div>
+
+        </form>
+        <!-- 挂号费用 -->
+    
+
+            <!-- 表头，在此基础渲染  -->
+        <table class="layui-hide" id="test" lay-filter="test"></table>
+        <form class="layui-form" action="post" style="margin-top: 15px;">
+            <div class="layui-form-item " style="text-align: center;">
+              <span  class="" style="font-size: 16px; line-height: 38px; height: 38px;">总计: &nbsp;￥ </span>
+              <input  class="layui-input" type="text" placeholder="80.00" value="80.00" style="width: 100px;display: inline;">
+            </div>
+            <div class="layui-form-item" style="text-align: center;">
+                <button class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">医疗卡支付</button>
+                <button id="cash_payment" class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">现金支付</button>
+                <button class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">线上支付</button>
+            </div>
+    
+        </form>
+
+          <!-- 找零显示 -->
+        <div class="balance change" style="display:none;">
+            <hr>
+            <div style="margin: 10px 60px; background-color: rgb(242, 249, 255);">
+              <div class="layui-row" >
+                <div class="layui-col-xs4 layui-col-md-offset1" style="padding-left: 80px;">
+                  <span>应支付:</span>
+                  <span>80.00</span>
+                </div>
+                <div class="layui-col-xs4">
+                  <span>已支付:</span>
+                  <div style="display: inline;">
+                      <input type="text" value="100" style="padding: 4px; width: 100px;">
+                  </div>
+                  <!-- <span>100.00</span> -->
+                </div>
+                <div class="layui-col-xs3">
+                    <span>应找零:</span>
+                    <span>20.00</span>
+                  </div>
+              </div>
+      
+            </div>
+            <hr>
+          </div>
+          <!-- 找零显示 -->
+            <form class="layui-form change" action="post" style="margin-top: 15px; display: none;">
+            
+                <div class="layui-form-item" style="text-align: center;">
+                    <button id="set" class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">现金找零</button>
+                    <button class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">退回医疗卡</button>
+                </div>
+        
+            </form>
+
+
+        </div>
+
+
+    <style>
+        /* input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px rgb(242, 249, 255) inset;} */
+        .balance{
+           display:block; 
+            width: 913px;
+             padding-left: 22px;
+              padding-right: 20px;
+        }
+        .balance span{
+          font-size: 16px;
+          line-height: 30px;
+          height: 30px;
+          padding:10px;
+        }
+    </style>
+        <!-- // 表格处理 -->
+
+    <script type="text/html" id="toolbarDemo">
+        <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+        </div>
+    </script>
+    
+    
+                
+    
+    <script>
+        var a;
+    layui.use('table', function(){
+        var table = layui.table;
+        
+        table.render({
+        elem: '#test'
+        // ,url:'mods/table/user/a.json'   //数据来源接口
+        
+        ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+        ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+            title: '提示'
+            ,layEvent: 'LAYTABLE_TIPS'
+            ,icon: 'layui-icon-tips'
+        }]
+        ,title: '用户数据表'
+        ,cols: [
+            [  //表头
+        {type: 'checkbox', "LAY_CHECKED":true,fixed: 'left'}
+            ,{field: 'yp_id', title: '药品代码', width:120, sort: true, fixed: 'left'}
+            ,{field: 'yp_name', title: '药品名称', width:130}
+            ,{field: 'yp_standard', title: '药品规格', width:100}
+            ,{field: 'yp_producer', title: '生产厂家', width: 250 }
+            ,{field: 'yp_price', title: '药品单价', width: 100}
+            ,{field: 'yp_count', title: '药品数量', width:100}
+        ]
+        ]
+        ,page: true
+        ,data:[
+            {
+                "yp_id": "H20113025",
+                "yp_name": "拉米夫定片",
+                "yp_standard":"0.1g*14s",
+                "yp_producer": "葛兰素史克制药(苏州)有限公司",
+                "yp_price": 22.00,
+                "yp_count": 2
+            },
+                    
+            {
+                "yp_id": "H44025287",
+                "yp_name": "布洛芬缓释片",
+                "yp_standard":"0.3g*20片",
+                "yp_producer": "惠州大亚制药股份有限公司",
+                "yp_price": 12,
+                "yp_count": 3
+            }
+        ]
+        });
+        
+        
+    });
+    $("#cash_payment").on('click',function(){
+        $(".change").css('display',"block");
+       
+        
+        return false;
+        // alert("关闭");
+        // var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+        // parent.layer.close(index);
+        
+        
+    });
+    </script>
+    
+    
+    <!-- // 表格处理 -->
+    
+    
+</body>
+</html>
