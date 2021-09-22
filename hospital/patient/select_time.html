@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>医院诊疗系统</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <script src="../layui.js"></script>
+  <script src="../js/jquery-3.5.1.js"></script>
+  
+  <link href="../css/base.css" rel="stylesheet">
+    
+  <link href="../css/hospital.css" rel="stylesheet">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="layui-layout layui-layout-admin">
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <div class="layui-header">
+      <div class="layui-logo layui-hide-xs layui-bg-black">医院诊疗系统</div>
+      
+      <ul class="layui-nav layui-layout-left">
+        <!-- 移动端显示 -->
+        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+          <i class="layui-icon layui-icon-spread-left"></i>
+        </li>
+        
+        <li class="layui-nav-item layui-hide-xs layui-this"><a href="">预约挂号</a></li>
+      
+      </ul>
+       <!-- 右上角导航栏 -->
+      <ul class="layui-nav layui-layout-right">
+          
+        <div class="layui-nav-item layui-hide layui-show-md-inline-block" style=" text-align: center; 
+          display: inline-block; line-height: 42px; height: 42px; width: 25px; ">
+          <div id="red-spot" style="position:absolute ;top: 1px; right: -7px; width: 4px; height: 4px; border: 0.5px solid red;
+          background-color: red; border-radius: 50%;float: right; "></div>
+          <i id="notice" class="layui-icon layui-icon-notice" style="font-size: 20px; color:rgba(255, 255, 255, .7);"></i>
+          <!-- <span class="layui-badge-dot" style=" border: 0.5px; position: relative;top:-62px; right: -15px; "></span> -->
+        </div>
+        <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+          <a href="javascript:;" style="text-decoration: none;" >
+            <img src="../image/gly.jpg" class="layui-nav-img" style="vertical-align:middle " >
+            患者
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a  href="">修改密码</a></dd>
+            <dd><a id="edit">编辑信息</a></dd>
+            <dd><a href="">退出登录</a></dd>
+          </dl>
+        </li>
+        
+      </ul>
+      <!-- 右上角导航栏 -->
+    </div>
+    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+      
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li class="layui-nav-item ">
+            <a style="text-decoration: none;" class="" href="complete_information.html">完善信息</a>
+          </li>
+          <li class="layui-nav-item ">
+            <a style="text-decoration: none; " href="select_doctor.html">选择医生</a>
+          </li>
+          <li class="layui-nav-item  layui-this">
+            <a style="text-decoration: none;" href="select_time.html">选择时间</a>
+          </li>
+          <li class="layui-nav-item">
+            <a style="text-decoration: none;" href="appoint_record.html">预约记录</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+    
+    <!-- 内容主体区域 -->
+    <div class="layui-body" style="padding:15px" >
+
+      <!-- 面包屑 -->
+
+      <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
+        <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
+          <span class="layui-breadcrumb" >
+              <a href="/">预约挂号</a>
+              <a><cite>选择时间</cite></a>
+          </span>
+        </fieldset>
+      </div>
+      
+      <!-- 面包屑 -->
+
+      
+      <div class="layui-row" style="height: 20px;background-color: #f6f8f9;"></div>
+
+
+      <!-- 医生介绍 -->
+      <div class="layui-row " style="height: 180px; background-color: #fbfdff; border: solid #eeeeee 1px; box-shadow: inset 0 0 20px rgba(227, 236, 255, 0.925);">
+          <div class="layui-col-xs2 " style="padding: 20px; text-align: center; width: 182px;">
+            <div class="layui-row">
+              <img src="../image/doctor.jpeg" alt="" style="border-radius: 50%; border: solid 1px #ffffff;">
+            </div>
+          </div>
+          <div class="layui-col-xs7 " style="padding-top: 25px;">
+            <h1 style="padding-bottom: 10px;">
+              <strong class="" style="margin-right: 10px;font-weight: 400;  font-size: 20px;">吴杰</strong>
+              
+                <span> 主任医师</span>
+                <span>/</span>
+                <span>副教授</span>
+            </h1>
+            <div >
+              <div class="layui-row" style="padding-bottom: 10px;">
+                
+                <b>擅长：</b>
+                <input type="hidden" id="expertFeature" value="内科急诊抢救、危重病诊治">
+                <span>心血管疾病介入诊治、冠心病、心绞痛、心肌梗死、高血压病、心衰、心律失常、心源性休克等诊疗</span>
+              </div>
+              <div class="layui-row">
+                <span style="color:#686868;">简介：</span>
+               <span style="line-height: 25px;">叶永辉，主任医师，副教授。1965年中山医科大学毕业。精通专业理论知识，有丰富的临床经验，
+                对心血管疾病和风湿病的诊治较有研究，是专业学科带头人之一。兼中华医学会广东风湿病学会委员。</span>
+              </div>
+              
+            </div>
+          </div>
+          <div class="layui-col-xs3">
+          </div>
+      </div>
+      <!-- 医生介绍 -->
+
+      <div class="layui-row" style="height: 20px;background-color: #f6f8f9;"></div>
+      <!-- 分界线 -->
+
+
+      <!-- 时间选择 -->
+      <div class="layui-row" style="color: #f0f2f5; width: 1238px;">
+        
+        <div class="mainframe" style="margin-left: 183px;">
+          <section class="block doctorcalendar">
+              <div class="hospitalselect">
+                  <div class="swiper-container swiper-container-horizontal">
+                      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(314.769px, 0px, 0px);">
+                          <div class="swiper-slide swiper-slide-active"><em>心血管内科</em></div>
+                      </div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                  <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                  <div class="swiper-button-next swiper-button-disabled" tabindex="0" role="button" aria-label="Next slide" aria-disabled="true"></div>
+              </div>
+              <div class="calendartable">
+                  <div class="ampm"><em>时段</em><em>08:30-10:00</em><em>10:00-11:30</em><em>14:30-16:00</em><em>16:30-18:00</em></div>
+                  <div class="muticalendar">
+                          <div class="swiper-container swiper-container-fade swiper-container-horizontal">
+                              <div class="swiper-wrapper" style="transition-duration: 0ms;">
+                                      <div class="swiper-slide swiper-slide-active" style="width: 784px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                          <div class="dateselect">
+                                              <div class="swiper-container swiper-container-horizontal">
+                                                  <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                                                      <div id="list1" class="swiper-slide swiper-slide-active" style="width: 694px;">
+                                                        <table>
+                                                          <thead>
+                                                            <tr>
+                                                              <th>09/11<i>明天</i></th>
+                                                              <th>09/12<i>周日</i></th>
+                                                              <th>09/13<i>周一</i></th>
+                                                              <th>09/14<i>周二</i></th>
+                                                              <th>09/15<i>周三</i></th>
+                                                              <th>09/16<i>周四</i></th>
+                                                              <th>09/17<i>周五</i></th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div></td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div></td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                      <div id="list2" style="display: none; pointer-events: auto; " class="swiper-slide swiper-slide-next" style="width: 694px;">
+                                                        <table>
+                                                          <thead>
+                                                            <tr>
+                                                              <th>09/18<i>周六</i></th>
+                                                              <th>09/19<i>周日</i></th>
+                                                              <th>09/20<i>周一</i></th>
+                                                              <th>09/21<i>周二</i></th>
+                                                              <th>09/22<i>周三</i></th>
+                                                              <th>09/23<i>周四</i></th>
+                                                              <th>09/24<i>周五</i></th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>
+                                                                <div class="select_time" style="height:64px; width:98px;background-color:rgb(129, 219, 255);text-align: center;">
+                                                                  <a style="line-height: 64px;">有号</a>
+                                                                </div>
+                                                              </td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                              <td>&nbsp;</td>
+                                                            </tr>
+                                                          </tbody>
+                                                        </table>
+                                                      </div>
+                                                  </div>
+                                              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                                              <div id="pre" class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+                                              <div id="nest" class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+                                          </div>
+                                      </div>
+                              </div>
+                          <span class="swiper-notification" aria-live="assertive" aria-atomic="true">
+                          </span></div>
+                  </div>
+              </div>
+          </section>
+      
+        </div>
+
+
+        <br><br><br>
+      </div>
+      <!-- 时间选择 -->
+        
+   
+          <!-- 消息框 -->
+<div class="notice_win win" style="display: none;" >
+  <div class="win_title">
+    <h6 style="display: inline-block; padding-left: 10px; color: #000; ">通知</h6>
+    <div style="display: inline-block; text-align: right; width: 200px;">
+      <span id="unread-count" style="text-align: right;color: #868686; font-size: 12px;">1</span>
+      <span style="text-align: right;color: #868686; font-size: 12px;">条未读通知</span>
+    </div>
+  </div>
+  <ul id="ul-read">
+    <div id="unread">
+      <div class="to-be-read">
+        <li class="win_item">
+          <div style="text-align: center; width: 40px; padding: 0; float: left;">
+            <i class="layui-icon layui-icon-username layui-inline" style=" border-radius: 14px 14px 14px 14px ;
+            height: 28px; line-height: 28px; width: 28px; background-color: #a0d9ff; color: rgb(0, 134, 196); font-size:20px ;"></i>
+  
+          </div>
+          <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+            <p style=" padding-bottom: 5px;">
+              新用户注册
+            </p>
+            <span style=" color: #868686; font-size: 12px;" >
+              10分钟前
+            </span>
+          </div>
+        </li>
+        <hr style="margin: 0px;">
+      </div>
+    </div>
+   
+    
+    <span style=" color: #868686; font-size: 12px; padding-left: 20px; height: 20px;line-height: 20px;" >已读</span>
+    <hr style="margin: 0px;" >
+    <div class="have-read">
+      <li class="win_item">
+
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+    </div>
+   
+  </ul>
+</div>
+<!-- 消息框 -->
+<!-- 消息样式 -->
+<style>
+  div p{
+    color: #000;
+  }
+  p+span{
+    position: relative;
+    top: -12px;
+    left: 5px;
+  }
+  .win{
+    padding: 0;
+    margin: 0;
+  }
+  .notice_win{
+    width: 300px;
+    height: 404px;
+    background-color: rgb(253, 255, 249);
+    float: none;
+    position: fixed;
+    top: 61px;
+    right: 150px;
+    z-index: 999;
+    border-radius: 8px;
+  }
+  .win_line{
+    width: 300;
+    height: 17;
+  }
+  .win_item{
+    border: 1px;
+    padding: 12px;
+    width: 274px;
+    height: 40px;
+  }
+  img{
+    width: 100%;
+  }
+  .win_title{
+    width: 252;
+    padding: 24px;
+    background-image: url("../image/image2.png");
+    background-size:200% 200%;
+    border-radius: 8px 8px 0 0px;
+    height: 17px;
+    line-height: 17px;
+  }
+</style>
+<!-- 消息样式 -->
+
+
+    </div>
+    <!-- 内容主体 end-->
+    
+  </div>
+
+
+  <!-- 消息处理 -->
+<script>
+  $("#notice").on('click',function(){
+    $(".notice_win").css('display',"block");
+  });
+  $("body").click(function(e){
+  	if((!$(e.target).closest("#notice").length)&&(!$(e.target).closest(".notice_win").length)){
+      $(".notice_win").css('display',"none");
+  	}
+  });
+
+  var count = $(".to-be-read").length;
+var flag=count;
+for(var i=0;i<count;i++){
+  $("#unread>.to-be-read").eq(i).click(function(e){
+    $(".have-read").prepend($("#unread .to-be-read").eq(i-1));
+    flag--;
+    $("#unread-count").text(flag);
+    if(flag==0){
+      $("#red-spot").css('display',"none");
+    }
+});
+
+}
+
+
+</script>
+
+<!-- 消息处理 -->
+
+
+
+  <style>
+    
+    
+    
+    
+   
+    h1 span{
+      font-size: 14px;color: #666;
+    }
+  </style>
+
+  <!-- 导航栏事件 -->
+  <script>
+  //JS 
+  layui.use(['element', 'layer', 'util'], function(){
+    var element = layui.element
+    ,layer = layui.layer
+    ,util = layui.util
+    ,$ = layui.$;
+    
+    //头部事件
+    util.event('lay-header-event', {
+      //左侧菜单事件
+      menuLeft: function(othis){
+        layer.msg('展开左侧菜单的操作', {icon: 0});
+      }
+      ,menuRight: function(){
+        layer.open({
+          type: 1
+          ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
+          ,area: ['260px', '100%']
+          ,offset: 'rt' //右上角
+          ,anim: 5
+          ,shadeClose: true
+        });
+      }
+    });
+    
+  });
+
+  $(".swiper-button-next").on('click',function(){
+    $("#list1").css('display',"none");
+    $("#nest").css('aria-disabled',true);
+    $("#list2").css('display',"block");
+    $("#pre").css('aria-disabled',false);
+    $("#pre").removeClass("swiper-button-disabled");
+    $("#nest").addClass("swiper-button-disabled");
+
+   
+  });
+
+  $("#pre").on('click',function(){
+    $("#list2").css('display',"none");
+    $("#pre").css('aria-disabled',true);
+    $("#list1").css('display',"block");
+    $("#nest").css('aria-disabled',false);
+    $("#nest").removeClass("swiper-button-disabled");
+    $("#pre").addClass("swiper-button-disabled");
+  });
+
+
+  $(function() {
+    var myDate = new Date;
+    var year = myDate.getFullYear(); //获取当前年
+    var mon = myDate.getMonth() + 1; //获取当前月
+    var date = myDate.getDate(); //获取当前日
+    var change=[0] ;
+    if(mon<10){
+      mon="0" +mon
+    }
+    for(var i=0;i<14;i++){
+      if(date<10)
+        change[i]=mon+"/0"+date;
+      else{
+        change[i]=mon+"/"+date;
+      }
+      // alert(change[i]);
+      date++;
+    }
+
+    // var h = myDate.getHours();//获取当前小时数(0-23)
+    // var m = myDate.getMinutes();//获取当前分钟数(0-59)
+    // var s = myDate.getSeconds();//获取当前秒
+    var week = myDate.getDay();
+    var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+    console.log(year, mon, date, weeks[week]);
+    for(var i=0;i<14;i++){
+      var a=$("table th").eq(i);
+      a.text(change[i]) ;
+      a.append("<i></i>");
+      if(i===0){
+        a.children().eq(0).text("今天");
+      }
+      else if(i===1){
+        a.children().eq(0).text("明天");
+      }else{
+        a.children().eq(0).text(weeks[(week+i)%7]);
+      }
+    }
+    
+})
+
+  $("table").on('click',function(){
+    layer.open({
+          type: 2,
+          area: ['1000px', '450px'],
+          fixed: false, //不固定
+          maxmin: true,
+          title:"患者缴费",
+          content: 'out_patien_bill.html'
+          
+           // 3.父传子值
+          //  success:function(layero, index){
+          //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+          //       var body = layer.getChildFrame('body', index);
+          //       var iframeWin = window[layero.find('iframe')[0]['name']];
+          //       var div=$(obj).text();
+          //       iframeWin.childIframe(div);    //看这
+          //   }
+        });
+  });
+
+
+  // 鼠标悬停事件
+  $(document).on('mouseover',".select_time",function(){
+      console.log(this);
+      $(this).css('background-color',"#ffd06a");
+  });
+  $(document).on('mouseout',".select_time",function(){
+      $(this).css('background-color',"rgb(129, 219, 255)");
+  });
+  </script>
+
+ <style>
+   .a{
+    border: solid #eeeeee 1px;
+    height: 200px;
+   }
+
+ </style>
+  <!-- 修改信息事件 -->
+<script>
+  $("#edit").on('click',function(e){
+    //打开窗口
+    layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"个人信息",
+            content: '../edit_information.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+  });
+
+</script>
+<!-- 修改信息事件 -->
+
+</body>
+</html>

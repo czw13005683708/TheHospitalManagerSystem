@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/layui.css">
+    <script src="../layui.js"></script>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <title>注销医疗卡</title>
+</head>
+<body>
+    <div style="padding: 10px;">
+        <!-- 余额显示 -->
+        <div class="balance" style="padding-bottom: 0;">
+            <hr>
+            <div style="background-color: rgb(242, 249, 255);">
+            <div class="layui-row" >
+                <div class="layui-col-xs7" style="padding-left: 80px;">
+                <span>姓名:</span>
+                <span>张珊</span>
+                </div>
+                <div class="layui-col-xs5">
+                <span>性别:</span>
+                <span>女</span>
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs7" style="padding-left: 80px;">
+                <span>卡号:</span>
+                <span>4513545351</span>
+                </div>
+                <div class="layui-col-xs5">
+                <span>余额:</span>
+                <span>￥4200.00</span>
+                </div>
+            </div>
+                
+    
+            </div>
+            <hr>
+        </div>
+        <!-- 余额显示 -->
+        <div class="balance change" style="display:block; padding-top: 0;">
+           
+            <form class="layui-form change" action="post" style="margin-top: 0px; margin-bottom: 0; padding-bottom: 0; display: block;">
+                <div class="layui-form-item " style="margin-bottom: 8px;padding-left: 20px;">
+                    <label class="layui-form-label" style="width: 142px;">余额退回方式:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <div class="layui-input-block " style="padding-left: 50px;">
+                      <input type="radio" name="way" value="" title="现金退回" checked="">&nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="way" value="" title="银行卡号退回">
+            
+                    </div>
+                </div>
+                <div style="text-align: center;" style="padding:10px;padding-top: 8px;">
+                    <input style="width: 300px; padding: 8px;" 
+                    type="text" name="title"  placeholder="请输入银行卡账号">
+                </div>
+                <div class="layui-form-item" style="text-align: center;padding-top: 20px;">
+                    <button id="set" class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">确定注销</button>
+                </div>
+        
+            </form>
+
+
+        </div>
+
+
+    <style>
+        .balance{
+           display:block; 
+            width: 500px;
+             padding: 10px;
+        }
+        .balance span{
+          font-size: 16px;
+          line-height: 30px;
+          height: 30px;
+          padding:10px;
+        }
+    </style>
+
+        
+    </div>
+    
+</body>
+</html>

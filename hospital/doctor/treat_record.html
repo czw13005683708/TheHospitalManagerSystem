@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>医院诊疗系统</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <script src="../layui.js"></script>
+  <script src="../js/jquery-3.5.1.js"></script>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <!-- 头部区域（可配合layui 已有的水平导航） -->
+  <div class="layui-header">
+    <div class="layui-logo layui-hide-xs layui-bg-black">医院诊疗系统</div>
+    
+    <ul class="layui-nav layui-layout-left">
+      <!-- 移动端显示 -->
+      <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+        <i class="layui-icon layui-icon-spread-left"></i>
+      </li>
+      
+      <li class="layui-nav-item layui-hide-xs layui-this"><a href="">门诊管理</a></li>
+     
+    </ul>
+    
+    <!-- 右上角导航栏 -->
+    <ul class="layui-nav layui-layout-right">
+        
+      <div class="layui-nav-item layui-hide layui-show-md-inline-block" style=" text-align: center; 
+        display: inline-block; line-height: 42px; height: 42px; width: 25px; ">
+        <div id="red-spot" style="position:absolute ;top: 1px; right: -7px; width: 4px; height: 4px; border: 0.5px solid red;
+        background-color: red; border-radius: 50%;"></div>
+        <i id="notice" class="layui-icon layui-icon-notice" style="font-size: 20px; color:rgba(255, 255, 255, .7);"></i>
+        <!-- <span class="layui-badge-dot" style=" border: 0.5px; position: relative;top:-62px; right: -15px; "></span> -->
+      </div>
+      <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+        <a href="javascript:;">
+          <img src="../image/doctor.jpeg" class="layui-nav-img">
+          吴杰
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">修改密码</a></dd>
+          <dd><a id="edit">编辑信息</a></dd>
+          <dd><a href="">退出登录</a></dd>
+        </dl>
+      </li>
+      
+    </ul>
+    <!-- 右上角导航栏 -->
+  </div>
+   <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+     
+      <ul class="layui-nav layui-nav-tree" lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a href="javascript:;">医生工作站</a>
+          <dl class="layui-nav-child">
+            <dd><a href="doctor_pending.html">预约管理</a></dd>
+            <dd><a href="doctor_treat.html">就诊管理</a></dd>
+            <dd><a href="treat_record.html" class="layui-this">就诊记录</a></dd>
+          </dl>
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+ <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+  
+  <!-- 内容主体区域 -->
+  <div class="layui-body" style="padding: 15px;">
+    <!-- 面包屑 -->
+  
+    <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
+      <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
+        <span class="layui-breadcrumb" >
+            <a href="/">门诊管理</a>
+            <a href="/">医生工作站</a>
+            <a><cite>就诊记录</cite></a>
+        </span>
+      </fieldset>
+    </div>
+  
+    <!-- 面包屑 -->
+    <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+      就诊记录表
+    </blockquote>
+
+        <!-- 表格头部 -->
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+
+
+    
+ <!-- 消息框 -->
+<div class="notice_win win" style="display: none;" >
+  <div class="win_title">
+    <h6 style="display: inline-block; padding-left: 10px;">通知</h6>
+    <div style="display: inline-block; text-align: right; width: 200px;">
+      <span id="unread-count" style="text-align: right;color: #868686; font-size: 12px;">1</span>
+      <span style="text-align: right;color: #868686; font-size: 12px;">条未读通知</span>
+    </div>
+  </div>
+  <ul id="ul-read">
+    <div id="unread">
+      <div class="to-be-read">
+        <li class="win_item">
+          <div style="text-align: center; width: 40px; padding: 0; float: left;">
+            <i class="layui-icon layui-icon-username layui-inline" style=" border-radius: 14px 14px 14px 14px ;
+            height: 28px; line-height: 28px; width: 28px; background-color: #a0d9ff; color: rgb(0, 134, 196); font-size:20px ;"></i>
+  
+          </div>
+          <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+            <p style=" padding-bottom: 5px;">
+              新用户注册
+            </p>
+            <span style=" color: #868686; font-size: 12px;" >
+              10分钟前
+            </span>
+          </div>
+        </li>
+        <hr style="margin: 0px;">
+      </div>
+    </div>
+   
+    
+    <span style=" color: #868686; font-size: 12px; padding-left: 20px; height: 20px;line-height: 20px;" >已读</span>
+    <hr style="margin: 0px;" >
+    <div class="have-read">
+      <li class="win_item">
+
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+    </div>
+   
+  </ul>
+</div>
+<!-- 消息框 -->
+<!-- 消息样式 -->
+<style>
+
+  .win{
+    padding: 0;
+    margin: 0;
+  }
+  .notice_win{
+    width: 300px;
+    height: 404px;
+    background-color: rgb(253, 255, 249);
+    float: none;
+    position: fixed;
+    top: 61px;
+    right: 150px;
+    z-index: 999;
+    border-radius: 8px;
+  }
+  .win_line{
+    width: 300;
+    height: 17;
+  }
+  .win_item{
+    border: 1px;
+    padding: 12px;
+    width: 274px;
+    height: 40px;
+  }
+  img{
+    width: 100%;
+  }
+  .win_title{
+    width: 252;
+    padding: 24px;
+    background-image: url("../image/image2.png");
+    background-size:200% 200%;
+    border-radius: 8px 8px 0 0px;
+    height: 17px;
+    line-height: 17px;
+  }
+</style>
+<!-- 消息样式 -->
+     
+</div>
+  
+  <!-- 主体 -->
+  
+</div>
+
+<!-- 消息处理 -->
+<script>
+  $("#notice").on('click',function(){
+    $(".notice_win").css('display',"block");
+  });
+  $("body").click(function(e){
+  	if((!$(e.target).closest("#notice").length)&&(!$(e.target).closest(".notice_win").length)){
+      $(".notice_win").css('display',"none");
+  	}
+  });
+
+  var count = $(".to-be-read").length;
+var flag=count;
+for(var i=0;i<count;i++){
+  $("#unread>.to-be-read").eq(i).click(function(e){
+    $(".have-read").prepend($("#unread .to-be-read").eq(i-1));
+    flag--;
+    $("#unread-count").text(flag);
+    if(flag==0){
+      $("#red-spot").css('display',"none");
+    }
+});
+
+}
+
+
+</script>
+
+<!-- 消息处理 -->
+
+
+<!-- // 表格处理 -->
+<script type="text/html" id="toolbarDemo">
+  <div class="layui-btn-container">
+    <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="医疗卡号" >
+    <a class="layui-btn layui-btn-sm" style="margin:0 0 9.6px 1em ;" >搜索</a>
+  </div>
+</script>
+
+ 
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">查看就诊</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删改医嘱</a>
+</script>
+              
+          
+ 
+<script>
+  var a;
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#test'
+    // ,url:'mods/table/user/a.json'   //数据来源接口
+    
+    ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+    ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+      title: '提示'
+      ,layEvent: 'LAYTABLE_TIPS'
+      ,icon: 'layui-icon-tips'
+    }]
+    ,title: '用户数据表'
+    ,cols: [
+      [  //表头
+    {type: 'checkbox', fixed: 'left'}
+      ,{field: 'id', title: '诊疗卡号', width:130, sort: true, fixed: 'left' ,align:"center"}
+      ,{field: 'username', title: '姓名', width:100,align:"center"}
+      ,{field: 'id_number', title: '身份证号', width: 180,align:"center"}
+      ,{field: 'sex', title: '性别', width:80,align:"center"}
+      ,{field: 'phone', title: '手机号', width: 120,align:"center" }
+      ,{field: 'location', title: '地址', width:250,align:"center"} 
+      ,{fixed: 'right', width: 180, align:'center', toolbar: '#barDemo'}
+    ]
+  ]
+    ,page: true
+    ,data:[
+        {
+            "id": 44092310,
+            "username": "张珊",
+            "id_number": 440923111903011230,
+            "sex": "女",
+            "phone": "13005681230",
+            "location": "广东省-东莞市-松山湖管委会-东莞理工学院"
+        },
+               
+        {
+            "id": 44092311,
+            "username": "张三",
+            "id_number": 440923111903011231,
+            "sex": "男",
+            "phone": "13005681231",
+            "location": "广东省-东莞市-松山湖管委会-东莞理工学院"
+        }
+    ]
+  });
+  
+  
+  
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"删改医嘱",
+            content: '../doctor_advice.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+    } else if(obj.event === 'edit'){
+      layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"删改医嘱",
+            content: '../treat_record_child.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+    }
+  });
+});
+</script>
+<!-- // 表格处理 -->
+
+
+
+
+ 
+  <!-- 修改信息事件 -->
+<script>
+  $("#edit").on('click',function(e){
+    //打开窗口
+    layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"个人信息",
+            content: '../edit_information.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+  });
+
+</script>
+<!-- 修改信息事件 -->
+
+</body>
+</html>

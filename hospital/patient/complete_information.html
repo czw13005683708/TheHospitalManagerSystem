@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>医院诊疗系统</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <script src="../js/jquery-3.5.1.js"></script>
+  <script src="../layui.js"></script>
+
+
+</head>
+<body>
+  <div class="layui-layout layui-layout-admin">
+    <!-- 头部区域（可配合layui 已有的水平导航） -->
+    <div class="layui-header">
+      <div class="layui-logo layui-hide-xs layui-bg-black">医院诊疗系统</div>
+      
+      <ul class="layui-nav layui-layout-left">
+        <!-- 移动端显示 -->
+        <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
+          <i class="layui-icon layui-icon-spread-left"></i>
+        </li>
+        <li class="layui-nav-item layui-hide-xs layui-this"><a href="doctor_pending.html">预约挂号</a></li>
+      
+      </ul>
+
+
+
+      <!-- 右上角导航栏 -->
+      <ul class="layui-nav layui-layout-right">
+          
+        <div class="layui-nav-item layui-hide layui-show-md-inline-block" style=" text-align: center; 
+          display: inline-block; line-height: 42px; height: 42px; width: 25px; ">
+          
+          
+          <div id="red-spot" style="position:absolute ;top: 1px; right: -7px; width: 4px; height: 4px; border: 0.5px solid red;
+          background-color: red; border-radius: 50%;"></div>
+          <i id="notice" class="layui-icon layui-icon-notice" style="font-size: 20px; color:rgba(255, 255, 255, .7);"></i>
+          <!-- <span class="layui-badge-dot" style=" border: 0.5px; position: relative;top:-62px; right: -15px; "></span> -->
+        </div>
+        <li class="layui-nav-item layui-hide layui-show-md-inline-block">
+          <a href="javascript:;">
+            <img src="../image/gly.jpg" class="layui-nav-img">
+            患者
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="">修改密码</a></dd>
+            <dd><a id="edit">编辑信息</a></dd>
+            <dd><a href="">退出登录</a></dd>
+          </dl>
+        </li>
+        
+      </ul>
+      <!-- 右上角导航栏 -->
+      
+    </div>
+    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+      
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li class="layui-nav-item  layui-this">
+            <a class="" href="complete_information.html">完善信息</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="select_doctor.html">选择医生</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="select_time.html">选择时间</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="appoint_record.html">预约记录</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 内容主体区域 -->
+    <div class="layui-body">
+      <div style="padding: 15px;">
+
+        <!-- 面包屑 -->
+
+      <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
+        <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
+          <span class="layui-breadcrumb" >
+              <a href="/">预约挂号</a>
+              <a><cite>完善信息</cite></a>
+          </span>
+        </fieldset>
+      </div>
+      
+      <!-- 面包屑 -->
+        <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+          填写详细信息
+        </blockquote>
+
+
+
+
+        <form class="layui-form" action="">
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">姓名</label>
+              <div class="layui-input-inline">
+                <input type="tel" name="name" lay-verify="" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">性别</label>
+              <div class="layui-input-block">
+                <input type="radio" name="sex" value="男" title="男" checked="">
+                <input type="radio" name="sex" value="女" title="女">
+              </div>
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">身份证号</label>
+              <div class="layui-input-block">
+                <input type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off"
+                  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label" style="padding-left: 29px;">职业</label>
+              <div class="layui-input-inline">
+                  <input type="text" name="work" 
+                      class="layui-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">手机</label>
+              <div class="layui-input-inline">
+                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">邮箱</label>
+              <div class="layui-input-inline">
+                <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <div class="layui-inline">
+              <label class="layui-form-label">出生年月</label>
+              <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+              </div>
+            </div>
+            <div class="layui-inline">
+              <label class="layui-form-label">年龄</label>
+              <div class="layui-input-inline">
+                <input type="tel" name="sex" lay-verify="required|phone" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+          </div>
+
+
+          <div class="layui-form-item" id="area-picker">
+            <div class="layui-form-label">现住地址</div>
+            <div class="layui-input-inline" style="width: 200px;">
+              <select name="province" class="province-selector" data-value="广东省" lay-filter="province-1">
+                <option value="">请选择省</option>
+              </select>
+            </div>
+            <div class="layui-input-inline" style="width: 200px;">
+              <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
+                <option value="">请选择市</option>
+              </select>
+            </div>
+            <div class="layui-input-inline" style="width: 200px;">
+              <select name="county" class="county-selector" data-value="龙岗区" lay-filter="county-1">
+                <option value="">请选择区</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">详细地址</label>
+            <div class="layui-input-block">
+              <textarea placeholder="请输入内容" class="layui-textarea" name="detail_address"></textarea>
+            </div>
+          </div>
+
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">保存信息</button>
+              <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+          </div>
+        </form>
+
+
+
+      </div>
+
+      <!-- 消息框 -->
+<div class="notice_win win" style="display: none;" >
+  <div class="win_title">
+    <h6 style="display: inline-block; padding-left: 10px;">通知</h6>
+    <div style="display: inline-block; text-align: right; width: 200px;">
+      <span id="unread-count" style="text-align: right;color: #868686; font-size: 12px;">1</span>
+      <span style="text-align: right;color: #868686; font-size: 12px;">条未读通知</span>
+    </div>
+  </div>
+  <ul id="ul-read">
+    <div id="unread">
+      <div class="to-be-read">
+        <li class="win_item">
+          <div style="text-align: center; width: 40px; padding: 0; float: left;">
+            <i class="layui-icon layui-icon-username layui-inline" style=" border-radius: 14px 14px 14px 14px ;
+            height: 28px; line-height: 28px; width: 28px; background-color: #a0d9ff; color: rgb(0, 134, 196); font-size:20px ;"></i>
+  
+          </div>
+          <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+            <p style=" padding-bottom: 5px;">
+              新用户注册
+            </p>
+            <span style=" color: #868686; font-size: 12px;" >
+              10分钟前
+            </span>
+          </div>
+        </li>
+        <hr style="margin: 0px;">
+      </div>
+    </div>
+   
+    
+    <span style=" color: #868686; font-size: 12px; padding-left: 20px; height: 20px;line-height: 20px;" >已读</span>
+    <hr style="margin: 0px;" >
+    <div class="have-read">
+      <li class="win_item">
+
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+
+      </li>
+      <hr style="margin:0px">
+      <li class="win_item">
+        <div style="text-align: center; width: 40px; padding: 0; float: left;">
+          <i class="layui-icon layui-icon-user layui-inline"
+            style=" border-radius: 14px 14px 14px 14px ;
+          height: 28px; line-height: 28px; width: 28px; background-color: #fcffa0; color: rgb(196, 176, 0); font-size:20px ;"></i>
+
+        </div>
+        <div style="display: inline-block; height: 40;margin: 0;padding-left: 20px; width: 200px;">
+          <p style=" padding-bottom: 5px;">
+            新病人预约
+          </p>
+          <span style=" color: #868686; font-size: 12px;">
+            10分钟前
+          </span>
+        </div>
+      </li>
+      <hr style="margin:0px">
+    </div>
+   
+  </ul>
+</div>
+<!-- 消息框 -->
+<!-- 消息样式 -->
+<style>
+
+  .win{
+    padding: 0;
+    margin: 0;
+  }
+  .notice_win{
+    width: 300px;
+    height: 420px;
+    background-color: rgb(253, 255, 249);
+    float: none;
+    position: fixed;
+    top: 61px;
+    right: 150px;
+    z-index: 999;
+    border-radius: 8px;
+  }
+  .win_line{
+    width: 300;
+    height: 17;
+  }
+  .win_item{
+    border: 1px;
+    padding: 12px;
+    width: 274px;
+    height: 40px;
+  }
+  img{
+    width: 100%;
+  }
+  .win_title{
+    width: 252;
+    padding: 24px;
+    background-image: url("../image/image2.png");
+    background-size:200% 200%;
+    border-radius: 8px 8px 0 0px;
+    height: 17px;
+    line-height: 17px;
+  }
+</style>
+<!-- 消息样式 -->
+
+
+    </div>
+    <!-- 内容主体 end-->
+    
+  </div>
+
+
+  <!-- 消息处理 -->
+<script>
+  $("#notice").on('click',function(){
+    $(".notice_win").css('display',"block");
+  });
+  $("body").click(function(e){
+  	if((!$(e.target).closest("#notice").length)&&(!$(e.target).closest(".notice_win").length)){
+      $(".notice_win").css('display',"none");
+  	}
+  });
+
+  var count = $(".to-be-read").length;
+var flag=count;
+for(var i=0;i<count;i++){
+  $("#unread>.to-be-read").eq(i).click(function(e){
+    $(".have-read").prepend($("#unread .to-be-read").eq(i-1));
+    flag--;
+    $("#unread-count").text(flag);
+    if(flag==0){
+      $("#red-spot").css('display',"none");
+    }
+});
+
+}
+
+
+</script>
+
+<!-- 消息处理 -->
+
+
+
+  
+
+  <!-- 省区市三级联动 -->
+  <script>
+    //配置插件目录
+    layui.config({
+      base: '../mods/',
+      version: '1.0'
+    });
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'layarea'], function () {
+      var layer = layui.layer,
+        form = layui.form,
+        layarea = layui.layarea;
+
+      layarea.render({
+        elem: '#area-picker',
+        change: function (res) {
+          //选择结果
+          console.log(res);
+        }
+      });
+    });
+  </script>
+
+
+
+    <!-- //日期选择器 -->
+    <script>
+      layui.use('laydate', function () {
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+          elem: '#test1'
+        });
+
+        //初始赋值
+        laydate.render({
+          elem: '#test1',
+          value: '1989-10-14',
+          isInitValue: true
+        });
+
+
+        //不出现底部栏
+        laydate.render({
+          elem: '#test1',
+          showBottom: false
+        });
+      });
+    </script>
+<!-- 修改信息事件 -->
+<script>
+  $("#edit").on('click',function(e){
+    //打开窗口
+    layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"个人信息",
+            content: '../edit_information.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+  });
+
+</script>
+<!-- 修改信息事件 -->
+</body>
+</html>
