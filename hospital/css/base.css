@@ -99,10 +99,10 @@ a {
     color: #333
 }
 
-a:hover {
+/* a:hover {
     text-decoration: underline;
     color: #ff9023
-}
+} */
 
 .swiper-container {
     margin: 0 auto;
@@ -162,7 +162,7 @@ a:hover {
     margin: 0 auto
 }
 
-.swiper-slide {
+/* .swiper-slide {
     -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -174,7 +174,7 @@ a:hover {
     -o-transition-property: transform;
     transition-property: transform;
     transition-property: transform, -webkit-transform
-}
+} */
 
 .swiper-slide-invisible-blank {
     visibility: hidden
