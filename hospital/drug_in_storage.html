@@ -32,12 +32,11 @@
   
       <!-- 右上角导航栏 -->
       <ul class="layui-nav layui-layout-right">
-        <div id="red-spot" style="position:absolute ;top: 10px; right: 140px; width: 4px; height: 4px; border: 0.5px solid red;
-          background-color: red; border-radius: 50%;"></div>
           
         <div class="layui-nav-item layui-hide layui-show-md-inline-block" style=" text-align: center; 
           display: inline-block; line-height: 42px; height: 42px; width: 25px; ">
-          
+          <div id="red-spot" style="position:absolute ;top: 1px; right: -7px; width: 4px; height: 4px; border: 0.5px solid red;
+          background-color: red; border-radius: 50%;"></div>
           <i id="notice" class="layui-icon layui-icon-notice" style="font-size: 20px; color:rgba(255, 255, 255, .7);"></i>
           <!-- <span class="layui-badge-dot" style=" border: 0.5px; position: relative;top:-62px; right: -15px; "></span> -->
         </div>
@@ -48,7 +47,7 @@
           </a>
           <dl class="layui-nav-child">
             <dd><a href="">修改密码</a></dd>
-            <dd><a href="">编辑信息</a></dd>
+            <dd><a id="edit">编辑信息</a></dd>
             <dd><a href="">退出登录</a></dd>
           </dl>
         </li>
@@ -86,17 +85,18 @@
     
         <!-- 内容主体区域 -->
     <div class="layui-body" style="padding: 15px;">
-        <!-- 面包屑 -->
-      <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <span class="layui-breadcrumb">
-          <a href="/">药库管理</a>
-          <a><cite>药品入库</cite></a>
-        </span>
-      </fieldset>
-        <!-- 面包屑 -->
-      <!-- <span style=" background-color: #009688;
-            color: #fff; height: 35px; padding: 5px; list-style: 25;
-            text-align:center; font-size: 14px;">药品表</span> -->
+      <!-- 面包屑 -->
+    
+      <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
+        <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
+          <span class="layui-breadcrumb" >
+              <a href="/">药库管理</a>
+              <a><cite>药品入库</cite></a>
+          </span>
+        </fieldset>
+      </div>
+    
+      <!-- 面包屑 -->
 
             <blockquote class="layui-elem-quote" style="margin-top: 10px;">
               药品库
@@ -112,168 +112,191 @@
 
             <!-- 新增药品 -->
             <div id="testdemo" style="margin: 20px 20px;padding: 20px 20px;border: 1px solid #009688;">
-              <form class="layui-form  layui-form-pane" style="height:100%;" id="formPreviewForm" lay-filter="formPreviewForm">
-                  <div id="grid_6" class="layui-form-item layui-row grid " data-id="grid_6" data-tag="grid" data-index="0">
-                      <div class="layui-col-md4 widget-col-list columngrid_60" data-index="0" data-parentindex="0">
-                          <div id="yp_id" class="layui-form-item " data-id="yp_id" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>药品代码:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_id" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_61" data-index="1" data-parentindex="0">
-                          <div id="yp_name" class="layui-form-item " data-id="yp_name" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>药品名称:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_name" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_62" data-index="2" data-parentindex="0">
-                          <div id="input_9" class="layui-form-item " data-id="input_9" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>药品规格:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="input_9" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
+              <form class="layui-form  layui-form-pane" style="height:100%;" id="formPreviewForm"
+                lay-filter="formPreviewForm">
+                <div id="grid_6" class="layui-form-item layui-row grid " data-id="grid_6" data-tag="grid"
+                  data-index="0">
+                  <div class="layui-col-md4 widget-col-list columngrid_60" data-index="0" data-parentindex="0">
+                    <div id="yp_id" class="layui-form-item " data-id="yp_id" data-tag="input" data-index="0"><label
+                        class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>药品代码:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_id" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
                   </div>
-                  <div id="grid_11" class="layui-form-item layui-row grid " data-id="grid_11" data-tag="grid" data-index="1">
-                      <div class="layui-col-md4 widget-col-list columngrid_110" data-index="0" data-parentindex="1">
-                          <div id="yp_form" class="layui-form-item " data-id="yp_form" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>剂型:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_form" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_111" data-index="1" data-parentindex="1">
-                          <div id="yp_producer" class="layui-form-item " data-id="yp_producer" data-tag="input" data-index="0">
-                              <label class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>生产产家:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_producer" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_112" data-index="2" data-parentindex="1">
-                          <div id="yp_company" class="layui-form-item " data-id="yp_company" data-tag="input" data-index="0">
-                              <label class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>单位:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_company" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
-                              </div>
-                          </div>
-                      </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_61" data-index="1" data-parentindex="0">
+                    <div id="yp_name" class="layui-form-item " data-id="yp_name" data-tag="input" data-index="0"><label
+                        class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>药品名称:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_name" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
                   </div>
-                  <div id="grid_15" class="layui-form-item layui-row grid " data-id="grid_15" data-tag="grid" data-index="2">
-                      <div class="layui-col-md4 widget-col-list columngrid_150" data-index="0" data-parentindex="2">
-                          <div id="yp_price" class="layui-form-item " data-id="yp_price" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>单价:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_price" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_151" data-index="1" data-parentindex="2">
-                          <div id="yp_mcompany" class="layui-form-item " data-id="yp_mcompany" data-tag="input" data-index="0">
-                              <label class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>最小单位:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_mcompany" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_152" data-index="2" data-parentindex="2">
-                          <div id="yp_coef" class="layui-form-item " data-id="yp_coef" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>系数:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_coef" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div id="grid_19" class="layui-form-item layui-row grid " data-id="grid_19" data-tag="grid" data-index="3">
-                      <div class="layui-col-md4 widget-col-list columngrid_190" data-index="0" data-parentindex="3">
-                          <div id="yp_pycode" class="layui-form-item " data-id="yp_pycode" data-tag="input" data-index="0"><label
-                                  class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>拼音码:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_pycode" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_191" data-index="1" data-parentindex="3">
-                          <div id="yp_wbcode" class="layui-form-item " data-id="yp_wbcode" data-tag="input" data-index="0"><label
-                                  class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>五笔码:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_wbcode" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_192" data-index="2" data-parentindex="3">
-                          <div id="yp_anumber" class="layui-form-item " data-id="yp_anumber" data-tag="input" data-index="0">
-                              <label class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>批准文号:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_anumber" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div id="grid_23" class="layui-form-item layui-row grid " data-id="grid_23" data-tag="grid" data-index="4">
-                      <div class="layui-col-md4 widget-col-list columngrid_230" data-index="0" data-parentindex="4">
-                          <div id="yp_insurance" class="layui-form-item " data-id="yp_insurance" data-tag="input" data-index="0">
-                              <label class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>医保可报:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_insurance" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_231" data-index="1" data-parentindex="4">
-                          <div id="yp_category" class="layui-form-item " data-id="yp_category" data-tag="input" data-index="0">
-                              <label class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>账目类别:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_category" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                      <div class="layui-col-md4 widget-col-list columngrid_232" data-index="2" data-parentindex="4">
-                          <div id="yp_ratio" class="layui-form-item " data-id="yp_ratio" data-tag="input" data-index="0"><label
-                                  class="layui-form-label layui-form-required" style="width: 110px;"><span
-                                      style="color:red;">*</span>加成比:</label>
-                              <div class="layui-input-block" style="margin-left: 110px"><input name="yp_ratio" value=""
-                                      placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
-                                      style="width:100%"></div>
-                          </div>
-                      </div>
-                  </div>
-                  <div id="grid_31" class="layui-form-item layui-row grid " data-id="grid_31" data-tag="grid" data-index="5">
-                    <div class="layui-col-md4 widget-col-list columngrid_310" data-index="0" data-parentindex="5">
-                      <div id="yp_count" class="layui-form-item " data-id="yp_count" data-tag="input" data-index="0"><label
-                          class="layui-form-label layui-form-required" style="width: 110px;"><span
-                            style="color:red;">*</span>药品数量:</label>
-                        <div class="layui-input-block" style="margin-left: 110px">
-                          <input name="yp_count" value="" placeholder="请输入"
-                            class="layui-input" lay-vertype="tips" lay-verify="required|number" style="width:100%">
-                          </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_310" data-index="0" data-parentindex="5">
+                    <div id="yp_count" class="layui-form-item " data-id="yp_count" data-tag="input" data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;">
+                        <span style="color:red;">*</span>药品数量:</label>
+                      <div class="layui-input-block" style="margin-left: 110px">
+                        <input name="yp_count" value="" placeholder="请输入" class="layui-input" lay-vertype="tips"
+                          lay-verify="required|number" style="width:100%">
                       </div>
                     </div>
-                    <div class="layui-col-md4 widget-col-list columngrid_311" data-index="1" data-parentindex="5"></div>
-                    <div class="layui-col-md4 widget-col-list columngrid_312" data-index="2" data-parentindex="5"></div>
                   </div>
-                  <div class="layui-form-item">
-                      <div class="layui-input-block"><button type="submit" class="layui-btn" lay-submit=""
-                              lay-filter="demo1">添加</button><button type="reset" class="layui-btn layui-btn-primary">重置</button>
+
+
+
+
+                </div>
+                <div id="grid_11" class="layui-form-item layui-row grid " data-id="grid_11" data-tag="grid"
+                  data-index="1">
+                  <div class="layui-col-md4 widget-col-list columngrid_110" data-index="0" data-parentindex="1">
+                    <div id="yp_form" class="layui-form-item " data-id="yp_form" data-tag="input" data-index="0"><label
+                        class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>剂型:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_form" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_111" data-index="1" data-parentindex="1">
+                    <div id="yp_producer" class="layui-form-item " data-id="yp_producer" data-tag="input"
+                      data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>生产产家:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_producer" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_112" data-index="2" data-parentindex="1">
+                    <div id="yp_company" class="layui-form-item " data-id="yp_company" data-tag="input" data-index="0">
+                      <label class="layui-form-label " style="width: 110px;"><span style="color:red;"></span>单位:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_company" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
                       </div>
+                    </div>
                   </div>
+                </div>
+                <div id="grid_15" class="layui-form-item layui-row grid " data-id="grid_15" data-tag="grid"
+                  data-index="2">
+                  <div class="layui-col-md4 widget-col-list columngrid_150" data-index="0" data-parentindex="2">
+                    <div id="yp_price" class="layui-form-item " data-id="yp_price" data-tag="input" data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>单价:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_price" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_151" data-index="1" data-parentindex="2">
+                    <div id="yp_mcompany" class="layui-form-item " data-id="yp_mcompany" data-tag="input"
+                      data-index="0">
+                      <label class="layui-form-label " style="width: 110px;"><span
+                          style="color:red;"></span>最小单位:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_mcompany" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_152" data-index="2" data-parentindex="2">
+                    <div id="yp_coef" class="layui-form-item " data-id="yp_coef" data-tag="input" data-index="0"><label
+                        class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;"></span>系数:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_coef" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify=""
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="grid_19" class="layui-form-item layui-row grid " data-id="grid_19" data-tag="grid"
+                  data-index="3">
+                  <div class="layui-col-md4 widget-col-list columngrid_190" data-index="0" data-parentindex="3">
+                    <div id="yp_pycode" class="layui-form-item " data-id="yp_pycode" data-tag="input" data-index="0">
+                      <label class="layui-form-label " style="width: 110px;"><span
+                          style="color:red;"></span>拼音码:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_pycode" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_191" data-index="1" data-parentindex="3">
+                    <div id="yp_wbcode" class="layui-form-item " data-id="yp_wbcode" data-tag="input" data-index="0">
+                      <label class="layui-form-label " style="width: 110px;"><span
+                          style="color:red;"></span>五笔码:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_wbcode" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_192" data-index="2" data-parentindex="3">
+                    <div id="yp_anumber" class="layui-form-item " data-id="yp_anumber" data-tag="input" data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>批准文号:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_anumber" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="grid_23" class="layui-form-item layui-row grid " data-id="grid_23" data-tag="grid"
+                  data-index="4">
+                  <div class="layui-col-md4 widget-col-list columngrid_230" data-index="0" data-parentindex="4">
+                    <div id="yp_insurance" class="layui-form-item " data-id="yp_insurance" data-tag="input"
+                      data-index="0">
+                      <label class="layui-form-label " style="width: 110px;"><span
+                          style="color:red;"></span>医保可报:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_insurance" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="" style="width:100%">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_231" data-index="1" data-parentindex="4">
+                    <div id="yp_category" class="layui-form-item " data-id="yp_category" data-tag="input"
+                      data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;"></span>账目类别:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_category" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify=""
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                  <div class="layui-col-md4 widget-col-list columngrid_232" data-index="2" data-parentindex="4">
+                    <div id="yp_ratio" class="layui-form-item " data-id="yp_ratio" data-tag="input" data-index="0">
+                      <label class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;"></span>加成比:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="yp_ratio" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify=""
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+                </div>
+                <div id="grid_31" class="layui-form-item layui-row grid " data-id="grid_31" data-tag="grid"
+                  data-index="5">
+                 
+
+                  <div class="layui-col-md4 widget-col-list columngrid_62" data-index="2" data-parentindex="0">
+                    <div id="input_9" class="layui-form-item " data-id="input_9" data-tag="input" data-index="0"><label
+                        class="layui-form-label layui-form-required" style="width: 110px;"><span
+                          style="color:red;">*</span>药品规格:</label>
+                      <div class="layui-input-block" style="margin-left: 110px"><input name="input_9" value=""
+                          placeholder="请输入" class="layui-input" lay-vertype="tips" lay-verify="required"
+                          style="width:100%"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="layui-col-md4 widget-col-list columngrid_311" data-index="1" data-parentindex="5"></div>
+                  <div class="layui-col-md4 widget-col-list columngrid_312" data-index="2" data-parentindex="5"></div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-input-block"><button type="submit" class="layui-btn" lay-submit=""
+                      lay-filter="demo1">添加</button><button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                  </div>
+                </div>
               </form>
-          </div>
+            </div>
 
             <!-- 新增药品 -->
 
@@ -456,7 +479,12 @@ for(var i=0;i<count;i++){
 
     <script type="text/html" id="toolbarDemo">
       <div class="layui-btn-container">
-        <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="搜索药品" >
+        <div style="padding-right:30px; display:inline-block ">
+          <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="搜索药品ID" >
+          <a class="layui-btn layui-btn-sm" style="margin:0 0 9.6px 1em ;" >搜索</a>
+        </div>
+        
+        <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="搜索药品名称" >
         <a class="layui-btn layui-btn-sm" style="margin:0 0 9.6px 1em ;" >搜索</a>
       </div>
     </script>
@@ -486,21 +514,21 @@ for(var i=0;i<count;i++){
         ,cols: [
           [  //表头
           {type: 'checkbox', fixed: 'left'}
-            ,{field: 'yp_id', title: '药品代码', width:130, sort: true, fixed: 'left'}
-            ,{field: 'yp_name', title: '药品名称', width:100}
-            ,{field: 'yp_count', title: '药品数量', width:100}
-            ,{field: 'yp_standard', title: '规格', width:100}
-            ,{field: 'yp_form', title: '剂型', width: 60, totalRow: true}
-            ,{field: 'yp_producer', title: '生产产家', width:200}
-            ,{field: 'yp_company', title: '单位', width: 200 }
-            ,{field: 'yp_price', title: '单价', width:110}
-            ,{field: 'yp_mcompany', title: '最小单位', width:110, sort: true,}
-            ,{field: 'yp_coef', title: '系数', width:60}
-            ,{field: 'yp_pycode', title: '拼音码', width:170}
-            ,{field: 'yp_wbcode', title: '五笔码', width: 150, sort: true, totalRow: true}
-            ,{field: 'yp_anumber', title: '批准文号', width:110, sort: true}
-            ,{field: 'yp_insurance', title: '医保可报', width: 120, sort: true, }
-            ,{fixed: 'right', width: 180, align:'center', toolbar: '#barDemo'}
+            ,{field: 'yp_id', title: '药品代码', width:130, sort: true, fixed: 'left' ,align:"center"}
+            ,{field: 'yp_name', title: '药品名称', width:100 ,align:"center"}
+            ,{field: 'yp_count', title: '药品数量', width:100 ,align:"center"}
+            ,{field: 'yp_standard', title: '规格', width:100 ,align:"center"}
+            ,{field: 'yp_form', title: '剂型', width: 60 ,align:"center"}
+            ,{field: 'yp_producer', title: '生产产家', width:200 ,align:"center"}
+            ,{field: 'yp_company', title: '单位', width: 200  ,align:"center"}
+            ,{field: 'yp_price', title: '单价', width:110 ,align:"center"}
+            ,{field: 'yp_mcompany', title: '最小单位', width:110 ,align:"center"}
+            ,{field: 'yp_coef', title: '系数', width:60 ,align:"center"}
+            ,{field: 'yp_pycode', title: '拼音码', width:170 ,align:"center"}
+            ,{field: 'yp_wbcode', title: '五笔码', width: 150 ,align:"center"}
+            ,{field: 'yp_anumber', title: '批准文号', width:110 ,align:"center"}
+            ,{field: 'yp_insurance', title: '医保可报', width: 120  ,align:"center"}
+            ,{fixed: 'right', width: 140, align:'center', toolbar: '#barDemo'}
           ]
         ]
         ,page: true
@@ -558,38 +586,33 @@ for(var i=0;i<count;i++){
 <!-- // 表格处理 -->
 
 
-    <script>
-    //JS 
-    layui.use(['element', 'layer', 'util'], function(){
-        var element = layui.element
-        ,layer = layui.layer
-        ,util = layui.util
-        ,$ = layui.$;
-        
-        //头部事件
-        util.event('lay-header-event', {
-        //左侧菜单事件
-        menuLeft: function(othis){
-            layer.msg('展开左侧菜单的操作', {icon: 0});
-        }
-        ,menuRight: function(){
-            layer.open({
-            type: 1
-            ,content: '<div style="padding: 15px;">处理右侧面板的操作</div>'
-            ,area: ['260px', '100%']
-            ,offset: 'rt' //右上角
-            ,anim: 5
-            ,shadeClose: true
-            });
-        }
-        });
-        
-    });
-    </script>
+    
 
 
 
+<!-- 修改信息事件 -->
+<script>
+  $("#edit").on('click',function(e){
+    //打开窗口
+    layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"个人信息",
+            content: 'edit_information.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+  });
 
+</script>
 
 </body>
 </html>

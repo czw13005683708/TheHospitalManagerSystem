@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/layui.css">
+    <script src="./layui.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <title>添加角色</title>
+</head>
+<body style="padding: 20px; padding-top: 10px;">
+    <table class="layui-hide" id="test2" lay-filter="test"></table>
+    <script type="text/html" id="barDemo2">
+        <a id="add" class="layui-btn layui-btn-xs" lay-event="edit">确认添加</a>
+        
+    </script>
+
+    <script>
+        var a;
+        var layer = layui.layer
+      layui.use('table', function(){
+        var table = layui.table;
+        
+        table.render({
+          width:1098,
+          elem: '#test2'
+          // ,url:'mods/table/user/a.json'   //数据来源接口
+          
+          ,title: '用户数据表'
+          ,cols: [
+            [  //表头
+            {field: 'phone', title: '手机号', width:130, align:'center',sort: true, fixed: 'left',edit: 'text'}
+            ,{field: 'username', title: '姓名', align:'center',width:110,edit: 'text'}
+            ,{field: 'role', title: '角色', align:'center',width:120,edit: 'text'}
+            ,{field: 'sex', title: '性别',align:'center', width:80,edit: 'text'}
+            ,{field: 'id_number', title: '身份证号', width: 190, align:'center',edit: 'text'}
+            ,{field: 'location', title: '地址',align:'center', width:300,edit: 'text'} 
+            ,{fixed: 'right',  width: 160, align:'center', toolbar: '#barDemo2'}
+    
+          ]
+        ]
+          ,data:[
+              {
+                  "phone": " ",
+                  "username": " ",
+                  "role":" ",
+                  "sex": " ",
+                  "id_number": " ",
+                  "location": ""
+              }
+          ]
+        });
+        
+        
+        
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+          var data = obj.data;
+          if(obj.event === 'edit'){
+              
+              console.log(obj.data);
+                  
+              // 在此上传数据
+
+              
+              
+            }
+          
+          return true;
+        });
+      });
+      
+     
+      
+      
+      </script>
+      
+      
+</body>
+</html>

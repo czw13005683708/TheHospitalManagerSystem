@@ -21,7 +21,7 @@
         <i class="layui-icon layui-icon-spread-left"></i>
       </li>
       
-      <li class="layui-nav-item layui-hide-xs "><a href="patient_information.html">门诊管理</a></li>
+      <li class="layui-nav-item layui-hide-xs "><a href="doctor_pending.html">门诊管理</a></li>
       <li class="layui-nav-item layui-hide-xs"><a href="medical_card_check_balance.html">费用管理</a></li>
       <li class="layui-nav-item layui-hide-xs"><a href="drug_in_storage.html">药库管理</a></li>
       <li class="layui-nav-item layui-hide-xs layui-this"><a href="">管理员</a></li>
@@ -33,12 +33,11 @@
     <!-- 右上角导航栏 -->
     <ul class="layui-nav layui-layout-right">
       <!-- 消息图标 -->
-      <div id="red-spot" style="position:absolute ;top: 10px; right: 140px; width: 4px; height: 4px; border: 0.5px solid red;
-        background-color: red; border-radius: 50%;"></div>
         
       <div class="layui-nav-item layui-hide layui-show-md-inline-block" style=" text-align: center; 
         display: inline-block; line-height: 42px; height: 42px; width: 25px; ">
-        
+        <div id="red-spot" style="position:absolute ;top: 1px; right: -7px; width: 4px; height: 4px; border: 0.5px solid red;
+        background-color: red; border-radius: 50%;"></div>
         <i id="notice" class="layui-icon layui-icon-notice" style="font-size: 20px; color:rgba(255, 255, 255, .7);"></i>
         <!-- <span class="layui-badge-dot" style=" border: 0.5px; position: relative;top:-62px; right: -15px; "></span> -->
       </div>
@@ -50,7 +49,7 @@
         </a>
         <dl class="layui-nav-child">
           <dd><a href="">修改密码</a></dd>
-          <dd><a href="">编辑信息</a></dd>
+          <dd><a id="edit">编辑信息</a></dd>
           <dd><a href="">退出登录</a></dd>
         </dl>
       </li>
@@ -60,33 +59,10 @@
     
   </div>
    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-  <div class="layui-side layui-bg-black">
-    <div class="layui-side-scroll">
-     
-      <ul class="layui-nav layui-nav-tree" lay-filter="test">
-        <li class="layui-nav-item ">
-          <a class="" href="patient_information.html">挂号管理</a>
-          <dl class="layui-nav-child">
-            <dd><a href="patient_information.html">病人信息</a></dd>
-            <dd><a href="out-patien-registration.html">门诊挂号</a></dd>
-          </dl>
-        </li>
-        <li class="layui-nav-item ">
-          <a href="doctor_pending.html">医生工作站</a>
-          <dl class="layui-nav-child">
-            <dd><a href="doctor_pending.html">预约处理</a></dd>
-            <dd><a href="doctor_treat.html">就诊管理</a></dd>
-            <dd><a href="treat_record.html">就诊记录</a></dd>
-          </dl>
-        </li>
-
-        
-      </ul>
-    </div>
-  </div>
+  
   
   <!-- 内容主体区域 -->
-<div class="layui-body" style="padding: 15px;">
+<div class="" style="padding: 15px; width: 98%; padding-top: 70px;">
   <blockquote class="layui-elem-quote" style="margin-top: 10px;">
     发布公告
   </blockquote>
@@ -100,8 +76,18 @@
             <input type="text" placeholder="请输入标题" class="layui-input" style="width: 400px;">
           </div>
         </div>
+        <div class="layui-form-label">发送对象</div>
+        <div class="layui-input-inline" style="width: 200px;">
+            <select name="province" class="province-selector" data-value="全体成员" lay-filter="province-1">
+               <option value="">全体患者</option>
+               <option value="">全体医生</option>
+               <option value="">全体费用管理员</option>
+               <option value="">全体药库管理员</option>
+               <option value="">全体成员</option>
+            </select>
+        </div>
       </div>
-      <div class="layui-form-item layui-form-text">
+      <div class="layui-form-item layui-form-text" style="padding-right: 20px;">
         <label class="layui-form-label">详细内容:</label>
         <div class="layui-input-block">
           <textarea placeholder="请输入内容" class="layui-textarea" name=""></textarea>
@@ -121,8 +107,8 @@
   <blockquote class="layui-elem-quote" style="margin-top: 10px;">
     账号角色管理
   </blockquote>
-<table class="layui-hide" id="test" lay-filter="test"></table>
 
+  
 
 <!-- 消息框 -->
 <div class="notice_win win" style="display: none;" >
@@ -278,6 +264,8 @@
     line-height: 17px;
   }
 </style>
+
+
 <!-- 消息样式 -->
 <!-- 消息处理 -->
 <script>
@@ -285,9 +273,11 @@
     $(".notice_win").css('display',"block");
   });
   $("body").click(function(e){
+    // 消息框的消失
   	if((!$(e.target).closest("#notice").length)&&(!$(e.target).closest(".notice_win").length)){
       $(".notice_win").css('display',"none");
     }
+
   });
 
 var count = $(".to-be-read").length;
@@ -308,6 +298,11 @@ for(var i=0;i<count;i++){
 
 <!-- 消息处理 -->
      
+<div style="padding:20px">
+  <table class="layui-hide" id="test" lay-filter="test"></table>
+
+</div>
+
 
 
 </div>
@@ -325,7 +320,7 @@ for(var i=0;i<count;i++){
 
  
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑角色</a>
+  <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del">删除账户</a>
   
 </script>
               
@@ -351,12 +346,12 @@ layui.use('table', function(){
       [  //表头
     {type: 'checkbox', fixed: 'left'}
       ,{field: 'phone', title: '手机号', width:130, align:'center',sort: true, fixed: 'left'}
-      ,{field: 'username', title: '姓名', align:'center',width:100}
-      ,{field: 'role', title: '角色', align:'center',width:100}
+      ,{field: 'username', title: '姓名', align:'center',width:110}
+      ,{field: 'role', title: '角色', align:'center',width:120}
       ,{field: 'sex', title: '性别',align:'center', width:80}
-      ,{field: 'id_number', title: '身份证号', width: 180, align:'center'}
-      ,{field: 'location', title: '地址',align:'center', width:250} 
-      ,{fixed: 'right', width: 220, align:'center', toolbar: '#barDemo'}
+      ,{field: 'id_number', title: '身份证号', width: 190, align:'center'}
+      ,{field: 'location', title: '地址',align:'center', width:300} 
+      ,{fixed: 'right', title:'<a id="add-form" class="layui-btn layui-btn-xs" lay-event="edit">添加账户</a>' , width: 160, align:'center', toolbar: '#barDemo'}
     ]
   ]
     ,page: true
@@ -391,23 +386,32 @@ layui.use('table', function(){
   });
   
   
-  
-  //监听行工具事件
-  table.on('tool(test)', function(obj){
-    var data = obj.data;
-    if(obj.event === 'edit'){
-       $("#role-div").css('display',"block");
-       $(".role-item").click(function(e){
-          var a = $(this).find("span").html();
-          console.log(a);
-          data.role=a;
-          console.log("xiugai:");
-          obj.update({
-            role: a
-          });
-          $("#role-div").css('display',"none");
-        });
+
+
+  table.on('tool(test)',function(obj){
+    var d = obj.data;
+    if(obj.event === 'del'){//event对应按钮中的lay-event
+      layer.confirm('真的删除账户吗？', function(index){
+        //在此更新数据库
+
+
+        obj.del();
+        layer.close(index);
+      });
     }
+  });
+  //监听行工具事件
+  $(document).on('click','#add-form', function(obj){
+    layer.open({
+        type: 2,
+        title:'填写详细信息',
+        area: ['1140px', '180px'],
+        fixed: false, //不固定
+        maxmin: true,
+        scrollbar:false,
+        content: 'add_role.html'
+
+      });
     
     return true;
   });
@@ -417,9 +421,6 @@ layui.use('table', function(){
 
 <!-- // 表格处理 -->
 
-
-
-<!-- 消息样式 -->
 
 
 <!-- 消息样式 -->
@@ -456,68 +457,30 @@ layui.use('table', function(){
 
 
 <!-- 角色选择框 -->
-<div  id="role-div" style="display: none; width: 120px; height: 194px;background-color: #fbfcf6; border: #868686 1px solid; float: left; position: fixed;
- top: 0; left: 20px; z-index: 9999999999; padding: 0px; border-radius: 5px;">
-  <div style="text-align: center;background-image: url('image/image2.png');background-size:150% 150%;">
-    
-    <span style="height: 36.6px;line-height: 36.6px;">角色</span>
-    <hr style="margin:0;">
-  </div>
-  <div class="role-item" style="text-align: center;" role="button">
-    <span>病人</span>
-  </div>
-  <div class="role-item" style="text-align: center;" role="button">
-    <span>医生</span>
-  </div>
-  <div class="role-item" style="text-align: center;" role="button">
-    <span>费用管理员</span>
-  </div>
-  <div class="role-item" style="text-align: center;" role="button">
-    <span>药库管理员</span>
-  </div>
-  <div class="role-item" style="text-align: center;" role="button">
-    <span>系统管理员</span>
-  </div>
-  <div  style="height: 12px; background-image: url('image/image2.png');background-size:150% 150%; ">
-  </div>
 
-</div>
-
+<!-- 修改信息事件 -->
 <script>
-    $(".role-item").hover(
-      function(){
-        $(this).css('background-color',"#75e1fc");
-      },
-      function(){
-        $(this).css('background-color',"#f5fdff");
-      }
-    );
-   $("#lbody").click(function(e){
-    var x,y;
-    x = e.pageX;
-    y = e.pageY;
-    $("#role-div").css("top",y-200);
-    $("#role-div").css("left",x-130);
+  $("#edit").on('click',function(e){
+    //打开窗口
+    layer.open({
+            type: 2,
+            area: ['1000px', '600px'],
+            fixed: false, //不固定
+            maxmin: true,
+            title:"个人信息",
+            content: 'edit_information.html'
+            // 3.父传子值
+            //  success:function(layero, index){
+            //       //关键在这，调用子的iframe的方法，进行传参,前两行固定写法
+            //       var body = layer.getChildFrame('body', index);
+            //       var iframeWin = window[layero.find('iframe')[0]['name']];
+            //       var div=$(obj).text();
+            //       iframeWin.childIframe(div);    //看这
+            //   }
+      });
+  });
 
-    
-  	if((!$(e.target).closest("#role-div").length)&&(!$(e.target).closest(".layui-btn").length)){
-      $("#role-div").css('display',"none");
-    }
-   });
-   
-    
 </script>
-<style>
-  .role-item span{
-    font-size: 14px;
-    color: #807167;
-  }
-  .role-item{
-    padding: 5px;
-    background-color: #f5fdff;
-  }
-</style>
-<!-- 角色选择框 -->
 
 </body>
 </html>

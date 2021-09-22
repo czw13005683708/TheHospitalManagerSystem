@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/layui.css">
+    <script src="./layui.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 内容主体区域 -->
+    <div style="width: 98%;">
+        <div style="padding: 15px;">
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            详细信息
+          </blockquote>
+  
+          <form class="layui-form" action="">
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-inline">
+                  <input type="tel" name="name" autocomplete="off" class="layui-input" value="张珊"
+                   readonly="readonly">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="sex" value="男" title="男">
+                  <input type="radio" name="sex" value="女" title="女" checked="">
+                </div>
+              </div>
+            </div>
+  
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">身份证号</label>
+                <div class="layui-input-block">
+                  <input type="text" name="identity" lay-verify="identity" placeholder="" autocomplete="off"value="440923199805050404" readonly="readonly"
+                    class="layui-input">
+                </div>
+              </div>
+              <div class="layui-inline" style="padding-left: 14px;">
+                <label class="layui-form-label">身份</label>
+                <div class="layui-input-block">
+                  <input type="text" name="role" autocomplete="off" value="患者" readonly="readonly"
+                    class="layui-input">
+                </div>
+              </div>
+            </div>
+  
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">手机</label>
+                <div class="layui-input-inline">
+                  <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" value="13005678338" readonly="readonly">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <div class="layui-input-inline">
+                  <button class="layui-btn layui-btn-sm">修改</button>
+                </div>
+              </div>
+              
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline">
+                  <input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input" value="13005678338@163.com" readonly="readonly">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <div class="layui-input-inline">
+                  <button class="layui-btn layui-btn-sm">修改</button>
+                </div>
+              </div>
+            </div>
+            
+  
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">出生年月</label>
+                <div class="layui-input-inline">
+                  <input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd" value="1998-10-01">
+                </div>
+              </div>
+              <div class="layui-inline">
+                <label class="layui-form-label">年龄</label>
+                <div class="layui-input-inline">
+                  <input type="tel" name="sex"  autocomplete="off" class="layui-input" value="23">
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="layui-form-item" id="area-picker">
+              <div class="layui-form-label">现住地址</div>
+              <div class="layui-input-inline" style="width: 200px;">
+                <select name="province" class="province-selector" data-value="广东省" lay-filter="province-1">
+                  <option value="">请选择省</option>
+                </select>
+              </div>
+              <div class="layui-input-inline" style="width: 200px;">
+                <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
+                  <option value="">请选择市</option>
+                </select>
+              </div>
+              <div class="layui-input-inline" style="width: 200px;">
+                <select name="county" class="county-selector" data-value="龙岗区" lay-filter="county-1">
+                  <option value="">请选择区</option>
+                </select>
+              </div>
+            </div>
+  
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">详细地址</label>
+              <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="detail_address"></textarea>
+              </div>
+            </div>
+            <!-- 头像框 -->
+            <div class="layui-form-item">
+              <label class="layui-form-label">修改头像</label>
+              <div class="layui-input-inline uploadHeadImage">
+                  <div class="layui-upload-drag" id="headImg">
+                      <i class="layui-icon"></i>
+                      <p>点击上传图片，或将图片拖拽到此处</p>
+                  </div>
+              </div>
+              <div class="layui-input-inline">
+                  <div class="layui-upload-list">
+                      <div style="width: 120px; height: 120px; ">
+                        <img class="layui-upload-img headImage" src="http://t.cn/RCzsdCq" id="demo1" style=" width:100%; height:100% ">
+                      </div>
+                     
+                      <p id="demoText"></p>
+                  </div>
+              </div>
+          </div>
+
+
+            <!-- 头像框 -->
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">保存信息</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+              </div>
+            </div>
+          </form>
+  
+  
+  
+        </div>
+  
+  
+      </div>
+      <!-- 内容主体 -->
+
+
+
+      <!-- 省区市三级联动 -->
+  <script>
+    //配置插件目录
+    layui.config({
+      base: './mods/',
+      version: '1.0'
+    });
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'layarea'], function () {
+      var layer = layui.layer,
+        form = layui.form,
+        layarea = layui.layarea;
+
+      layarea.render({
+        elem: '#area-picker',
+        change: function (res) {
+          //选择结果
+          console.log(res);
+        }
+      });
+    });
+  </script>
+
+
+
+    <!-- //日期选择器 -->
+    <script>
+      layui.use('laydate', function () {
+        var laydate = layui.laydate;
+
+        //常规用法
+        laydate.render({
+          elem: '#test1'
+        });
+
+        //初始赋值
+        laydate.render({
+          elem: '#test1',
+          value: '1989-10-14',
+          isInitValue: true
+        });
+
+
+        //不出现底部栏
+        laydate.render({
+          elem: '#test1',
+          showBottom: false
+        });
+      });
+    </script>
+
+
+
+    <!-- 头像上传 -->
+    <script type="text/javascript">
+      layui.use(["jquery", "upload", "form", "layer", "element"], function () {
+          var $ = layui.$,
+              element = layui.element,
+              layer = layui.layer,
+              upload = layui.upload,
+              form = layui.form;
+          //拖拽上传
+          var uploadInst = upload.render({
+              elem: '#headImg'
+              , url: '/upload/headImg'
+              , size: 500
+              , before: function (obj) {
+                  //预读本地文件示例，不支持ie8
+                  obj.preview(function (index, file, result) {
+                      $('#demo1').attr('src', result); //图片链接（base64）
+                  });
+              }
+              , done: function (res) {
+                  //如果上传失败
+                  if (res.code > 0) {
+                      return layer.msg('上传失败');
+                  }
+                  //上传成功
+                  //打印后台传回的地址: 把地址放入一个隐藏的input中, 和表单一起提交到后台, 此处略..
+                  /*   console.log(res.data.src);*/
+                  window.parent.uploadHeadImage(res.data.src);
+                  var demoText = $('#demoText');
+                  demoText.html('<span style="color: #8f8f8f;">上传成功!!!</span>');
+              }
+              , error: function () {
+                  //演示失败状态，并实现重传
+                  var demoText = $('#demoText');
+                  demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                  demoText.find('.demo-reload').on('click', function () {
+                      uploadInst.upload();
+                  });
+              }
+          });
+          element.init();
+      });
+  </script>
+    <!-- 头像上传 -->
+</body>
+</html>

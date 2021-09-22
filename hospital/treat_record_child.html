@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/layui.css">
+  <script src="./layui.js"></script>
+  <script src="./js/jquery-3.5.1.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="padding: 15px;">
+
+
+    <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+      患者信息：
+    </blockquote>
+    <div class="layui-row" style="padding: 0 4em; line-height: 25px;">
+      <div class="layui-col-xs4" style="margin: 0; padding: 3px  3em;">
+        <span style="padding: 3px;padding-left: 13px; ">姓名：</span>
+        <span style="padding: 3px; ">张珊</span>
+      </div>
+      <div class="layui-col-xs4" style="margin: 0; padding: 3px  3em;">
+        <span style="padding: 3px; ">性别：</span>
+        <span style="padding: 3px; ">女</span>
+      </div>
+      <div class="layui-col-xs4" style="margin: 0; padding: 3px  3em;">
+        <span style="padding: 3px; ">手机号：</span>
+        <span style="padding: 3px; ">13005681230</span>
+      </div>
+    </div>
+
+
+    <div class="layui-row" style="padding: 0 4em;line-height: 25px;">
+      <div class="layui-col-xs4" style=" margin: 0; padding: 3px  3em; padding-right: 0;">
+        <span style="padding: 3px;padding-left: 12px;  ">身份证：</span>
+        <span style="padding: 3px;">440923111903011200</span>
+      </div>
+      <div class="layui-col-xs8" style=" margin: 0; padding: 3px  3em;">
+        <span style="padding: 3px; ">现住地址：</span>
+        <span style="padding: 3px; ">广东省-东莞市-松山湖管委会-东莞理工学院</span>
+      </div>
+    </div>
+
+    <div class="layui-row" style="padding: 0 4em;line-height: 25px;">
+      <div class="layui-col-xs4" style=" margin: 0; padding: 3px  3em; padding-right: 0;">
+        <span style="padding: 3px;padding-left: 12px;  ">就诊时间：</span>
+        <span style="padding: 3px;">2021-09-22</span>
+      </div>
+      
+    </div>
+
+    <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+        处方单
+      </blockquote>
+      </div>
+      <div id="yp">
+        <div id="" style="background-color: #FAFAFA;">
+          <div class="layui-row" style="padding: 0 2em; line-height: 25px;">
+            <div class="layui-col-xs3" style="margin: 0; padding: 3px  1em;">
+              <span style="padding: 3px;">药品：</span>
+              <span style="padding: 3px; ">拉米夫定</span>
+            </div>
+            <div class="layui-col-xs3" style="margin: 0; padding: 3px  1em;">
+              <span style="padding: 3px; ">药品规格：</span>
+              <span style="padding: 3px; ">0.1g*7s*2板</span>
+            </div>
+            <div class="layui-col-xs6" style="margin: 0; padding: 3px  1em;">
+              <span style="padding: 3px; ">用法:</span>
+              <input type="text" style="width: 363px;"placeholder="一天一次 &nbsp;一次一片" disabled="disabled">
+            </div>
+          </div>
+        </div>
+    
+        <div id="addyp" style="background-color: #FAFAFA;">
+            <div class="layui-row" style="padding: 0 2em; line-height: 25px;">
+              <div class="layui-col-xs3" style="margin: 0; padding: 3px  1em;">
+                <span style="padding: 3px;">药品：</span>
+                <span style="padding: 3px; ">拉米夫定</span>
+              </div>
+              <div class="layui-col-xs3" style="margin: 0; padding: 3px  1em;">
+                <span style="padding: 3px; ">药品规格：</span>
+                <span style="padding: 3px; ">0.1g*7s*2板</span>
+              </div>
+              <div class="layui-col-xs6" style="margin: 0; padding: 3px  1em;">
+                <span style="padding: 3px; ">用法:</span>
+                <input type="text" style="width: 363px;" placeholder="一天一次 &nbsp;一次一片" disabled="disabled" >
+              </div>
+            </div>
+        </div>
+      </div>
+      
+  
+  
+
+  <form action="post" style="padding: 15px;">
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">主诉：</label>
+      <div class="layui-input-block">
+        <textarea disabled="disabled" class="layui-textarea" placeholder="主诉反复发作劳累后心悸、气急、浮肿22年余，加重2月余。
+        "></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">既往病史及其他病史：</label>
+      <div class="layui-input-block">
+        <textarea disabled="disabled" class="layui-textarea" placeholder="1990年在外院诊断为“风湿性心脏病”，1976年发现有“房颤”，此后长期服用地高辛，同时辅以利尿剂，近来增用扩血管药物，病情仍时轻时重，并多次出现洋地黄过量情况。近2月来一直服地高辛，每日0.25mg。于一月下旬再次出现胸闷、气急、心悸加重，夜间不能平卧，阵发性心前区隐痛，轻度咳嗽，咯白色粘痰，自觉无发执，无咯血。平时体质较差,易患感冒。无肝炎及结核病史。未作预防接种已近30年。" ></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">过敏史</label>
+      <div class="layui-input-block">
+        <textarea placeholder="海鲜类过敏" disabled="disabled" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">望闻切诊</label>
+      <div class="layui-input-block">
+        <textarea placeholder="        肺脏视诊:呼吸运动两侧一致，呼吸动度增强。触诊:两侧呼吸运动相等，语颤一致无胸膜摩擦感。
+        叩诊:呈清音，肺下界位于肩胛下角线第10肋间，呼吸移动度4cm。听诊:呼吸音粗糙，未闻及异常呼吸音，双肩胛下区可闻少许细湿罗音，未闻胸膜摩擦音。
+        心脏:视诊:心尖搏动位于左腋前线第6肋间，搏动范围弥散。心前区无隆起。
+        触诊:心尖搏动位于左腋前线第6肋间处，与心前区均有抬举性冲动，心尖部并可触及舒张期震颤。无心包摩擦感。
+        叩诊:心浊音界向两侧扩大，以向左下扩大为主，大小如右表。锁骨中线距离中线9cm。
+        听诊:心率120土/min，心律绝对不齐，心音强弱不等，心尖区可闻向左腋下传导的全收缩期粗糙Ⅳ级吹风样杂音及局限性舒张中晚期Ⅳ级隆隆样杂音。主动脉瓣第二听诊区闻及ⅢI级收缩中期喷射性杂音向颈部传导，舒张期递减性杂音向胸骨下端传导。肺动脉瓣区及三尖瓣区均可闻及收缩期柔和Ⅰ级吹风样杂音，不传导，吸气时不增强。P2=A2P2无亢进或分裂。无心包摩擦音。" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">辅助检查</label>
+      <div class="layui-input-block">
+        <textarea  disabled="disabled"  placeholder="        血像:红细胞4×1012/L,血红蛋白108g/L,白细胞计数14.5×109/L,中性81%,淋巴17%,单核2%。
+        X线:胸透示心影普遍增大，肺内有明显淤血征象，肺动脉圆锥突出，右膈肌光整，肋膈角锐利，左膈肌被心影遮盖。
+        心电图:快速心房颤动，右室肥厚，ST-T改变，部分与洋地黄作用有关。
+        " class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">诊断</label>
+      <div class="layui-input-block">
+        <textarea disabled="disabled" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">治疗意见</label>
+      <div class="layui-input-block">
+        <textarea disabled="disabled" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">病情变化及处置</label>
+      <div class="layui-input-block">
+        <textarea disabled="disabled" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item layui-form-text " style="padding-top: 12px;">
+      <label class="layui-form-label">医嘱</label>
+      <div class="layui-input-block">
+        <textarea placeholder="请输入内容" disabled="disabled" class="layui-textarea"></textarea>
+      </div>
+    </div>
+  </form>
+
+    
+ 
+       
+        
+
+        <hr>
+        <hr>
+
+      </div>
+      <!-- 主体 -->
+
+       <style>
+         input::-webkit-input-placeholder {
+            color:black;
+          }
+          input::-moz-input-placeholder {
+            color:black;
+          }
+          input::-ms-input-placeholder {
+            color:black;
+          }
+          textarea::-webkit-input-placeholder {
+            color:black;
+          }
+          textarea::-moz-input-placeholder {
+            color:black;
+          }
+          textarea::-ms-input-placeholder {
+            color:black;
+          }
+
+          
+       </style>
+
+
+
+
+        <script>
+          // var d;
+          // // 3.父传子值
+          // function childIframe(childNo) {
+          //   console.log(childNo);
+
+          //   var params = JSON.stringify(childNo);
+          //   console.log(params);
+
+          // }
+
+          // 2.子传父值
+          // $('a').click(function(){
+          //     var type=$(this).attr('data-type');
+          //     parent.gotoHref(type)
+          // })
+
+          // 1.示例：
+          // parent.tools.func1();
+        </script>
+
+</body>
+
+</html>

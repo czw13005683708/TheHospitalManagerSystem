@@ -7,23 +7,22 @@
   <link rel="stylesheet" href="./css/layui.css">
   <script src="./layui.js"></script>
   <script src="./js/jquery-3.5.1.js"></script>
-
 </head>
 <body>
-    <div class="layui-layout layui-layout-admin">
+  <div class="layui-layout layui-layout-admin">
     <!-- 头部区域（可配合layui 已有的水平导航） -->
     <div class="layui-header">
-        <div class="layui-logo layui-hide-xs layui-bg-black">医院诊疗系统</div>
-        
-        <ul class="layui-nav layui-layout-left">
+      <div class="layui-logo layui-hide-xs layui-bg-black">医院诊疗系统</div>
+      
+      <ul class="layui-nav layui-layout-left">
         <!-- 移动端显示 -->
         <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-            <i class="layui-icon layui-icon-spread-left"></i>
+          <i class="layui-icon layui-icon-spread-left"></i>
         </li>
         
         <li class="layui-nav-item layui-hide-xs"><a href="doctor_pending.html">门诊管理</a></li>
-        <li class="layui-nav-item layui-hide-xs"><a href="medical_card_check_balance.html">费用管理</a></li>
-        <li class="layui-nav-item layui-hide-xs layui-this"><a href="drug_in_storage.html">药库管理</a></li>
+        <li class="layui-nav-item layui-hide-xs layui-this"><a href="">费用管理</a></li>
+        <li class="layui-nav-item layui-hide-xs"><a href="drug_in_storage.html">药库管理</a></li>
         <li class="layui-nav-item layui-hide-xs"><a href="administrator.html">管理员</a></li>
        
       </ul>
@@ -58,57 +57,91 @@
     </div>
     <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
     <div class="layui-side layui-bg-black">
-        <div class="layui-side-scroll">
-        
-          <ul class="layui-nav layui-nav-tree" lay-filter="test">
-            <li class="layui-nav-item layui-nav-itemed">
-              <a href="drug_in_storage.html">药品入库</a>
-            </li>
-            <li class="layui-nav-item layui-nav-itemed">
-              <a href="drug_out_storage.html">药品出库</a>
-            </li>
-            <li class="layui-nav-item layui-nav-itemed">
-              <a href="drug_query.html" >药品查询</a>
-            </li>
-            <li class="layui-nav-item layui-nav-itemed">
-              <a href="drug_adjust_price.html" class="layui-this">药品调价</a>
-            </li>
-            <li class="layui-nav-item layui-nav-itemed">
-              <a href="drug_delete.html">药品删除</a>
-            </li>
-          </ul>
+      <div class="layui-side-scroll">
+      
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <li class="layui-nav-item layui-nav-itemed">
+            <a class="" href="javascript:;">医疗卡管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="medical_card_check_balance.html">余额查询</a></dd>
+              <dd><a href="" class="layui-this">余额充值</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="out_patient_charges.html">门诊收费</a>
+          </li>
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="return_premium.html">门诊退费</a>
+          </li>
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="day_chosing_cost.html">费用日结</a>
+          </li>
+        </ul>
 
+
+      </div>
+    </div>
+  <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+    
+    <!-- 内容主体区域 -->
+  <div class="layui-body" style="padding: 15px;">
+
+    <!-- 面包屑 -->
+
+    <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
+      <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
+        <span class="layui-breadcrumb" >
+            <a href="/">费用管理</a>
+            <a href="/">医疗卡管理</a>
+            <a><cite>余额充值</cite></a>
+        </span>
+      </fieldset>
+    </div>
+
+    <!-- 面包屑 -->
+    <table id="currentTableId"></table>
+
+    <div id="balance" style="display:none; width: 957px; padding-left: 22px; padding-right: 20px;">
+      <hr>
+      <div style="margin: 10px 60px; background-color:  rgb(242, 249, 255)">
+        <div class="layui-row" >
+          <div class="layui-col-xs4 layui-col-md-offset3">
+            <span>姓名:</span>
+            <span>张珊</span>
+          </div>
+          <div class="layui-col-xs4">
+            <span>性别:</span>
+            <span>女</span>
+          </div>
+        </div>
+        <div class="layui-row">
+          <div class="layui-col-xs4 layui-col-md-offset3">
+            <span>卡号:</span>
+            <span>4513545351</span>
+          </div>
+          <div class="layui-col-xs4">
+            <span>余额:</span>
+            <span>￥4200.00</span>
+          </div>
+        </div>
+          
+
+      </div>
+      <hr>
+
+      <form class="layui-form" action="post" style="margin-top: 15px;">
+        <div class="layui-form-item" style="text-align: center;">
+          <input  class="layui-input" type="text" placeholder="请输入充值面额" style="width: 200px;display: inline;">
+          <button class="layui-btn layui-btn-normal" type="submit" style="display: inline;height: 38px;">确认</button>
   
         </div>
-      </div>
-     <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+
+      </form>
+    </div>
+	
     
-        <!-- 内容主体区域 -->
-    <div class="layui-body" style="padding: 15px;">
-      <!-- 面包屑 -->
-    
-      <div style=" padding: 15px;  background-color: #ffffff; border: solid #eeeeee 1px; box-shadow: inset 0 0 10px rgba(255, 255, 227, 0.925);">
-        <fieldset class="layui-elem-field layui-field-title" style="margin: 0; border-top: none; padding: 0;height: 25px;line-height: 25px;">
-          <span class="layui-breadcrumb" >
-              <a href="/">药库管理</a>
-              <a><cite>药品调价</cite></a>
-          </span>
-        </fieldset>
-      </div>
-    
-      <!-- 面包屑 -->
-
-            <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-              药品库
-            </blockquote>
-
-            <!-- 由id渲染表格 -->
-            <table class="layui-hide" id="test" lay-filter="test"></table>
-
-            
-
-
-    <!-- 消息框 -->
+  <!-- 消息框 -->
 <div class="notice_win win" style="display: none;" >
   <div class="win_title">
     <h6 style="display: inline-block; padding-left: 10px;">通知</h6>
@@ -282,123 +315,93 @@ for(var i=0;i<count;i++){
 
 
 
-    <!-- // 表格处理 -->
 
-    <script type="text/html" id="toolbarDemo">
-      <div class="layui-btn-container">
-        <div style="padding-right:30px; display:inline-block ">
-          <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="搜索药品ID" >
-          <a class="layui-btn layui-btn-sm" style="margin:0 0 9.6px 1em ;" >搜索</a>
-        </div>
-        
-        <input class=" layui-btn-sm" type="text"  name="" id="" placeholder="搜索药品名称" >
-        <a class="layui-btn layui-btn-sm" style="margin:0 0 9.6px 1em ;" >搜索</a>
-      </div>
+  <!-- 卡片渲染事件 -->
+  <script>
+    layui.config({
+        base: 'mods/extend/' //配置 layui 第三方扩展组件存放的基础目录
+      }).extend({
+        cardTable: 'cardTable/cardTable' 
+      }).use(['table','layer', 'form', 'jquery', 'cardTable'], function () {
+        let table = layui.table;
+        let form = layui.form;
+        let $ = layui.jquery;
+              let layer = layui.layer;
+              let cardTable = layui.cardTable;
+  
+              cardTable.render({
+                  elem: '#currentTableId',
+                      linenum: 3, //每行数量 2,3,4,6
+                      page: false, //是否分页
+                      //, imageName: 'image' //图片地址，默认：image
+                      //此为动态
+                      //url: '/card.json', 
+                      //此为静态
+                      data:[{
+                          "id": "card1",
+                          "image": "https://gw.alipayobjects.com/zos/rmsportal/gLaIAoVWTtLbBWZNYEMg.png",
+                          "title": "医疗卡",
+                          "remark": "请插入医疗卡进行充值"
+                        },{
+                          "id": "card2",
+                          "image": "https://gw.alipayobjects.com/zos/rmsportal/iXjVmWVHbCJAyqvDxdtx.png",
+                          "title": "身份证",
+                          "remark": "请插入身份证进行充值",
+                        },{
+                          "id": "card3",
+                          "image": "https://gw.alipayobjects.com/zos/rmsportal/iZBVOIhGJiAnhplqjvZW.png",
+                          "title": "医疗卡号",
+                          "remark": "输入医疗卡号进行充值",
+                        }]
+        })
+         
+      })
     </script>
- 
-    <script type="text/html" id="barDemo">
-      <a class="layui-btn layui-btn-xs" lay-event="edit">修改价格</a>
-    </script>
-              
-          
- 
-    <script>
-      var a;
-    layui.use('table', function(){
-      var table = layui.table;
-      
-      table.render({
-        elem: '#test'
-        // ,url:'mods/table/user/a.json'   //数据来源接口
-        
-        ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-        ,defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
-          title: '提示'
-          ,layEvent: 'LAYTABLE_TIPS'
-          ,icon: 'layui-icon-tips'
-        }]
-        ,title: '用户数据表'
-        ,cols: [
-          [  //表头
-          {type: 'checkbox', fixed: 'left'}
-            ,{field: 'yp_id', title: '药品代码', width:130, sort: true, fixed: 'left' ,align:"center"}
-            ,{field: 'yp_name', title: '药品名称', width:100 ,align:"center"}
-            ,{field: 'yp_count', title: '药品数量', width:100 ,align:"center"}
-            ,{field: 'yp_standard', title: '规格', width:100 ,align:"center"}
-            ,{field: 'yp_form', title: '剂型', width: 60 ,align:"center"}
-            ,{field: 'yp_producer', title: '生产产家', width:200 ,align:"center"}
-            ,{field: 'yp_company', title: '单位', width: 200  ,align:"center"}
-            ,{field: 'yp_price', title: '单价', width:110 ,align:"center"}
-            ,{field: 'yp_mcompany', title: '最小单位', width:110 ,align:"center"}
-            ,{field: 'yp_coef', title: '系数', width:60 ,align:"center"}
-            ,{field: 'yp_pycode', title: '拼音码', width:170 ,align:"center"}
-            ,{field: 'yp_wbcode', title: '五笔码', width: 150 ,align:"center"}
-            ,{field: 'yp_anumber', title: '批准文号', width:110 ,align:"center"}
-            ,{field: 'yp_insurance', title: '医保可报', width: 120  ,align:"center"}
-            ,{fixed: 'right', width: 180, align:'center', toolbar: '#barDemo'}
-          ]
-        ]
-        ,page: true
-        ,data:[
-            {
-                "yp_id": 1320030581,
-                "yp_name": "拉米夫定片",
-                "yp_count": "255",
-                "yp_standard":"	0.1g*14s",
-                "yp_form": "片剂",
-                "yp_producer": "葛兰素史克制药(苏州)有限公司",
-                "yp_company": "葛兰素史克制药(苏州)有限公司",
-                "yp_price": "￥139.00",
-                "yp_mcompany": "0.3g",
-                "yp_coef": "1",
-                "yp_pycode":"lamifudingpian",
-                "yp_wbcode": "sdlkfjsd",
-                "yp_anumber": "H20030581",
-                "yp_insurance": "否"
-            }
-          ]
-          
-      });
-      
-      
-      //监听行工具事件
-      table.on('tool(test)', function(obj){
-        var data = obj.data;
-        //console.log(obj)
-        if(obj.event === 'edit'){
-          layer.prompt({
-            formType: 2,
-            value: '140.00',
-            title: '请输入新的价格:',
-            area: ['200px', '20px'] //自定义文本域宽高
-          },function(val, index){
-              layer.close(index);
-            });
-        } else if(obj.event === 'del'){
-          layer.prompt({
-            formType: 2
-            ,value: data.email
-          }, function(value, index){
-            obj.update({
-              email: value
-            });
-            layer.close(index);
-          });
-        }
-      });
+    <!-- 卡片渲染事件 -->
+
+
+    <style>
+      #balance span{
+        font-size: 16px;
+        line-height: 30px;
+        height: 30px;
+        padding:10px;
+      }
+    </style>
+
+      <!-- 卡片点击处理 -->
+  <script>
+    $(document).on("click","#card1",function(){
+      $("#balance").css('display',"block");
     });
-    </script>
+    $(document).on("click","#card2",function(){
+      $("#balance").css('display',"block");
+    });
 
 
-<!-- // 表格处理 -->
+    $(document).on("click","#card3",function(){
+      
+      layer.open({
+        type: 2,
+        area: ['400px', '240px'],
+        fixed: false, //不固定
+        maxmin: true,
+        scrollbar:false,
+        title:"查询医疗卡余额",
+        content: 'card_login.html',
+        cancel:function(){
+          $("#balance").css('display',"block");
+        }
 
+      });
+      
+    });
+    
+  </script>
+    <!-- 卡片点击处理 -->
 
-   
-
-
-
-<!-- 修改信息事件 -->
-<script>
+ <!-- 修改信息事件 -->
+ <script>
   $("#edit").on('click',function(e){
     //打开窗口
     layer.open({
@@ -420,6 +423,9 @@ for(var i=0;i<count;i++){
   });
 
 </script>
+
+ 
+  
 
 </body>
 </html>
